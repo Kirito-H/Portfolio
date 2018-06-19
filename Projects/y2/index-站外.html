@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="robots" content="index,follow">
+    <meta name="flexible" content="initial-dpr=1">
+    <script type="text/javascript" src="js/flexible.js"></script>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="format-detection" content="telephone=no">
+    <meta content="email=no" name="format-detection">
+    <title>蛋糕狂欢趴</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <!-- 站外所有页面显示这个top-->
+    <div class="top">XXX邀请您来切蛋糕，瓜分福利</div>
+    <header class="header">
+      <div class="twoYears"></div>
+      <h1 class="logo"><img src="images/logo.png"></h1>
+      <h2 class="title"><span>好友助力切蛋糕，瓜分红包</span></h2>
+      <div class="balloon"></div>
+      <div class="piece blue-piece"></div>
+      <div class="piece green-piece"></div>
+      <div class="piece pink-piece"></div>
+      <div class="piece blue-piece-r"></div>
+      <div class="piece green-piece-r"></div>
+      <div class="piece red-piece"></div>
+      <div class="redbag"></div>
+      <div class="gold"></div>
+      <div class="velas">
+        <div class="fuego"></div>
+        <div class="fuego"></div>
+        <div class="fuego"></div>
+        <div class="fuego"></div>
+        <div class="fuego"></div>
+      </div>
+      <div class="velas velas-right">
+        <div class="fuego"></div>
+        <div class="fuego"></div>
+        <div class="fuego"></div>
+        <div class="fuego"></div>
+        <div class="fuego"></div>
+      </div>
+      <div class="red-btn"><a class="joinEnter" href="javascript:;">我要切蛋糕</a></div>
+    </header>
+    <div class="container">
+      <div class="flow">
+        <div class="df-info"><span>活动玩法</span></div>
+        <div class="downFlow">
+          <div class="df-item">邀好友<br>切蛋糕</div>
+          <div class="df-arrow"></div>
+          <div class="df-item">集5人<br>分福利</div>
+          <div class="df-arrow"></div>
+          <div class="df-item">提现<br>福利</div>
+        </div>
+      </div>
+      <div class="rule-title"><span>活动说明</span></div>
+      <ul class="rule-list">
+        <li><span>1、</span>钱端用户可登录钱端(定制版)App发起活动，成功邀请4名新用户参与助力“切蛋糕”（注册成为钱端用户）后，全部5人一起随机瓜分现金福利；</li>
+        <li><span>2、</span>现金福利总额以及单个参与用户瓜分金额均随机分配，现金福利数量有限，先到先得，送完即止；</li>
+        <li><span>3、</span>限新用户可受邀参与助力“切蛋糕”，发起活动不限新老用户，每位用户限发起活动5次；</li>
+        <li><span>4、</span>严禁任何形式的刷奖、作弊行为，钱端有权取消用户违规所得奖励，并保留追究其相关法律责任的权利；</li>
+        <li><span>5、</span>在法律规定范围内，广东钱端商务服务有限公司保留对本活动的最终解释权。</li>
+      </ul>
+    </div>
+    <div class="heid"></div>
+    <div class="join-model">
+      <div class="modle-close"></div>
+      <div class="model-title">X位小伙伴已加入，就等你来！</div>
+      <div class="model-form">
+        <input class="form-text cash-blur" type="tel" value="" maxlength="11" placeholder="输入手机号" id="mobileNum">
+      </div>
+      <div class="model-form">
+        <input class="form-text cash-blur" type="tel" value="" maxlength="6" placeholder="验证码" id="msnNum"><a class="msmcode veriCode" href="javascript:;" title="获取验证码">获取验证码</a>
+      </div>
+      <div class="model-form last-form">
+        <div class="checkbox checked"></div>同意 <a href="association.html" target="_blank" class="xy-link">《钱端相关协议》</a>
+      </div>
+      <div class="red-btn"><a class="joinSend" href="javascript:;">确认参加</a></div>
+      <div class="tip-mag-wrong">
+        <p>错误提示!</p>
+      </div>
+    </div>
+    <div class="down-model">
+      <div class="modle-close"></div>
+      <div class="model-title-down">你已是钱端注册用户</div>
+      <div class="model-title-info">诚邀你发起新一轮切蛋糕！</div>
+      <div class="red-btn"><a href="http://mobile.qianduan.com/app/download" target="_blank">下载App发起</a></div>
+    </div>
+    <script type="text/javascript" src="js/zepto.min.js"></script>
+    <script type="text/javascript">
+      //触发a:active
+      document.body.addEventListener('touchstart', function () {});
+      //统计代码
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?b7efee9e31cc3ef0b326dd3355ab5fb6";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+    <script>
+      $(function(){
+          // 发送验证码
+          $('.msmcode').click(function () {
+            if($(this).is('.disabled')) return false;
+            $(this).removeClass('veriCode').addClass('disabled').html('剩余<span class="countDown"' + '\>60</span>s');
+            countDown();
+            $("#msnNum").focus();
+          });
+          function countDown() {
+            var t = setInterval(function(){
+              var $cd = $('.countDown'),
+                txt = parseInt($cd.text());
+              $cd.text(--txt);
+            }, 1000);
+            setTimeout(function(){
+              clearInterval(t);
+              $('.msmcode').removeClass('disabled').addClass('veriCode').html('重新获取');
+            }, 60000);
+          };
+      
+          //弹框
+          $(".joinEnter").on("click",function (){
+            var s_h = $("body").height();
+            var s_b = document.body.scrollTop;
+            var s_m = $(".red-btn").height();
+            var s_mb = s_b+s_m;
+            $(this).parent().addClass("btn-disable");
+            $(".heid").show(100).css("height", s_h);
+            $(".join-model").show();
+            setTimeout(function(){
+                $(".join-model").addClass('join-show').css({"top":s_mb});
+            },10);
+      
+            $("body").bind("touchmove",function(event){event.preventDefault();});
+            $("body,html").css("overflow","hidden");
+      
+            $(".form-text").focus(function(){
+              $(this).removeClass("cash-blur");
+              $(".join-model").css({"top":s_b});
+            })
+            $(".form-text").blur(function() {
+              $(this).addClass("cash-blur");
+              setTimeout(function () {
+                if( $(".cash-blur").length > 1){
+                  document.body.scrollTop=s_b;
+                  $(".join-model").css({"top":s_mb});
+                };
+              },10);
+            });
+          });
+      
+          // 关闭弹框
+          $(".modle-close").on("click",function(){
+              $("body").unbind("touchmove");
+              $("body,html").css("overflow","auto");
+              $(this).parent().removeClass("join-show").css("top","-50%");
+              $(".red-btn").removeClass("btn-disable");
+              $(".heid").hide(500);
+              setTimeout(function(){
+                  $(this).parent().hide();
+              },500);
+          });
+          //点蒙版关闭
+          $(".heid").on("click",function(){
+              $("body").unbind("touchmove");
+              $("body,html").css("overflow","auto");
+              $(".join-model,.down-model").removeClass("join-show").css("top","-50%");
+              $(this).hide(500);
+              setTimeout(function(){
+                  $(".red-btn").removeClass("btn-disable");
+                  $(".join-model,.down-model").hide();
+              },500);
+          });
+      
+          //老用户弹框
+          $(".joinSend").on("click",function(){
+              var s_b = document.body.scrollTop;
+              var s_m = $(".red-btn").height();
+              var s_mb = s_b+s_m;
+              $(".join-model").removeClass("join-show").css("top","-50%");
+              setTimeout(function(){
+                  $(".join-model").hide();
+              },500);
+              $(".down-model").show();
+              setTimeout(function(){
+                  $(".down-model").addClass('join-show').css({"top":s_mb});
+              },100);
+          })
+      
+          // 勾选框
+          $(".checkbox").on("click",function(){
+              $(this).toggleClass("checked");
+          });
+      
+          //验证手机
+          function fadeTip(){
+              setTimeout(function () {
+                  $(".tip-mag-wrong").removeClass('tip-m-show');
+              }, 2000);
+              setTimeout(function () {
+                  $(".tip-mag-wrong").hide();
+              },1000)
+          }
+          function check_phone() {
+            var phone =$("#mobileNum").val();
+            if(!(/^1[3|4|5|7|8]\d{9}$/.test(phone))){
+              $(".tip-mag-wrong").addClass('tip-m-show').show().find("p").html("请输入正确11位手机号码");
+              fadeTip();
+              return false;
+            }
+          };
+      
+          //验证验证码
+          function check_num() {
+            var msnNum =$("#msnNum").val();
+            if(!(/^\d{6}$/.test(msnNum))){
+              $(".tip-mag-wrong").addClass('tip-m-show').show().find("p").html("请正确输入验证码");
+              fadeTip();
+              return false;
+            }
+          };
+          $("#mobileNum").on("blur",check_phone);
+          $("#msnNum").on("blur",check_num);
+      });
+    </script>
+  </body>
+</html>

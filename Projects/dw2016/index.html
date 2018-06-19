@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="robots" content="index,follow">
+    <meta name="flexible" content="initial-dpr=1">
+    <script type="text/javascript" src="js/flexible.js"></script>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="format-detection" content="telephone=no">
+    <meta content="email=no" name="format-detection">
+    <title>粽游天下</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <header class="head">
+      <div class="bigtitle"><img src="images/bigtitle.png">
+        <div class="date">游历时间:2016年6月6日-6月8日</div>
+      </div><img class="bamboo zleft" src="images/bamboo.png"><img class="bamboo zright" src="images/bamboo.png">
+      <div class="zongzi"><img class="cont" src="images/zongzi-cont.png"><img class="wave-black" src="images/wave.png"><img class="wave-front" src="images/wave.png">
+        <div class="z-ship"><img class="ship" src="images/zongzi.png"><img class="eyes zleft" src="images/eyes.png"><img class="eyes zright" src="images/eyes.png"><img class="smoke" src="images/smoke.png"></div>
+      </div>
+    </header>
+    <div class="container">
+      <div class="title"><span>粽子君钱端江湖游记</span></div>
+      <section class="part01"><img class="light" src="images/light.png"><img class="smoke" src="images/smoke.png"><img class="fire fleft" src="images/fireLeft.png"><img class="fire fright" src="images/fireRight.png"><img class="brow bleft" src="images/eyebrow.png"><img class="brow bright" src="images/eyebrow.png">
+        <p class="contLeft">定期优选项目<br>期限灵活选择多</p>
+        <p class="contRight">活期摇钱宝<br>最高加息至<span>8%</span></p>
+      </section>
+      <section class="part02"><img class="smoke" src="images/smoke.png"><img class="eyes eLeft" src="images/xin.png"><img class="eyes eRight" src="images/xin.png"></section>
+      <section class="part03"><img src="images/section03.png"></section>
+      <section class="part04"><img class="guse" src="images/guse.png"><img class="wh wleft" src="images/wenhao.png"><img class="wh wright" src="images/wenhao.png"></section>
+      <section class="part05">
+        <div class="que">粽子君的真实身份(物品名-运动相关)是？
+          <p>(猜中即有机会赢取端午粽子君身份礼品！)</p>
+        </div><img class="zongzi-bottom" src="images/zongzi-bottom.png"><img class="cont-intro left" src="images/cont-intro.jpg">
+        <div class="ewm right"><img src="images/wem.jpg">
+          <p>扫码参与竞猜</p>
+        </div>
+      </section>
+      <section class="part06">
+        <div class="title-bottom"><img src="images/active-intro.jpg"></div>
+        <ul>
+          <li><span>1、</span>活动时间2016年６月6日-６月8日;</li>
+          <li><span>2、</span>活动期间用户成功投资任意项目（含摇钱宝）或购买任意端午优惠商品，并分享此活动页面同时附言“粽子君身份对应的真实物品名称”至微信朋友圈截图，然后以“截图+粽子+手机号”的格式发送给“钱端大本赢”微信公众号参与竞猜，猜中粽子身份即有机会免费赢取该礼品（每人限中奖1次）；</li>
+          <li><span>3、</span>本活动页面展示商品仅供参考，以闪惠实际销售的商品为准；</li>
+          <li><span>4、</span>本活动结束后，将于5个工作日内在“钱端大本赢”微信公众号公布中奖名单，10个工作日内安排奖品发放；</li>
+          <li><span>5、</span>本活动最终解释权归钱端App所有。</li>
+        </ul>
+      </section>
+    </div>
+    <footer id="footer"><a class="buy" href="http://wqb.qianduan.com/Static/wx/index.html"><img src="images/qd_logo.png">下载钱端(定制版)</a></footer>
+    <script type="text/javascript">
+      //触发a:active
+      document.body.addEventListener('touchstart', function () {});
+      window.onload = function(){
+          if(isWeiXin()){
+            var p = document.getElementsByTagName('footer');
+            document.body.className = 'has-footBar';
+            p[0].style.display="block";
+          }
+        };
+        function isWeiXin(){
+          var ua = window.navigator.userAgent.toLowerCase();
+          return ua.match(/MicroMessenger/i) == 'micromessenger';
+        }
+      
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "//hm.baidu.com/hm.js?3c00b0212f610ba4e3f73dbb485073c3";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+  </body>
+</html>

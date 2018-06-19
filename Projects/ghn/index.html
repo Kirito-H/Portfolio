@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="robots" content="index,follow">
+    <meta name="flexible" content="initial-dpr=1">
+    <script type="text/javascript" src="js/flexible.js"></script>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="format-detection" content="telephone=no">
+    <meta content="email=no" name="format-detection">
+    <title>赚足压岁钱 回家过好年</title>
+    <link rel="stylesheet" href="css/style.css?id=2.0">
+  </head>
+  <body>
+    <header class="header">
+      <div class="time">活动时间: 2017年1月23-2017年2月5日</div>
+      <div class="glim"><a class="rule-btn" href="javascript:;">
+          <p>抽奖<br>规则</p></a></div>
+    </header>
+    <div class="container">
+      <div class="cont-title">活动期间用户完成以下任务，即可获得对应的抽奖次数</div>
+      <div class="cont-table">
+        <div class="cont-row">
+          <div class="row-hd"><img src="images/icon_01.png">
+            <p>邀请1位好友完成实名认证</p>
+          </div>
+          <div class="row-after">
+            <p>2次</p>
+          </div>
+        </div>
+        <div class="cont-row">
+          <div class="row-hd"><img src="images/icon_02.png">
+            <p>投资优选项目总金额满10000元</p>
+          </div>
+          <div class="row-after">
+            <p>1次</p>
+          </div>
+        </div>
+        <div class="cont-row">
+          <div class="row-hd"><img src="images/icon_03.png">
+            <p>存入摇钱宝总金额满10000元</p>
+          </div>
+          <div class="row-after">
+            <p>1次</p>
+          </div>
+        </div>
+        <div class="cont-row">
+          <div class="row-hd"><img src="images/icon_04.png">
+            <p>购买闪惠商品总金额满100元</p>
+          </div>
+          <div class="row-after">
+            <p>1次</p>
+          </div>
+        </div>
+      </div>
+      <div class="cont-lottery">
+        <div class="lottery-title">
+          <p>抽奖机会:<span>5</span>次</p><a class="notes-btn" href="javascript:;">中奖记录</a>
+        </div>
+        <div class="lottery-box">
+          <div class="ch-lottery" id="lottery">
+            <div class="ch-lottery-group">
+              <div class="ch-lottery-item ch-lottery-turn">
+                <div class="ch-img"><img src="images/ch_prize_01.png" alt="100元奖品"></div>
+                <p>100元奖品</p>
+              </div>
+              <div class="ch-lottery-item ch-lottery-turn">
+                <div class="ch-img"><img src="images/ch_prize_02.png" alt="50元投资券"></div>
+                <p>50元投资券</p>
+              </div>
+              <div class="ch-lottery-item ch-lottery-turn">
+                <div class="ch-img"><img src="images/ch_prize_03.png" alt="1.8%加息券"></div>
+                <p>1.8%加息券</p>
+              </div>
+            </div>
+            <div class="ch-lottery-group">
+              <div class="ch-lottery-item ch-lottery-turn">
+                <div class="ch-img"><img src="images/ch_prize_02.png" alt="50元投资券"></div>
+                <p>50元投资券</p>
+              </div>
+              <div class="ch-lottery-item"><a class="ch-lottery-start" href="javascript:;" title="抽奖">抽奖</a></div>
+              <!--可抽奖class="ch-lottery-start",不可抽class="ch-lottery-start ch-lottery-over",抽奖中class="ch-lottery-start ch-lottery-end"-->
+              <div class="ch-lottery-item ch-lottery-turn">
+                <div class="ch-img"><img src="images/ch_prize_04.png" alt="商品优惠券"></div>
+                <p>30元闪惠代金券</p>
+              </div>
+            </div>
+            <div class="ch-lottery-group">
+              <div class="ch-lottery-item ch-lottery-turn">
+                <div class="ch-img"><img src="images/ch_prize_03.png" alt="1.8%加息券"></div>
+                <p>1.8%加息券</p>
+              </div>
+              <div class="ch-lottery-item ch-lottery-turn">
+                <div class="ch-img"><img src="images/ch_prize_06.png" alt="很遗憾，没中奖！"></div>
+                <p>很遗憾，没中奖！</p>
+              </div>
+              <div class="ch-lottery-item ch-lottery-turn">
+                <div class="ch-img"><img src="images/ch_prize_05.png" alt="200元奖品"></div>
+                <p>200元奖品</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--活动说明-->
+    <div class="modal rule-modal">
+      <div class="overly"></div>
+      <div class="modal-cont">
+        <div class="modal-title">
+          <h4>抽奖规则</h4><a class="modal-close" href="javascript:;"></a>
+        </div>
+        <div class="modal-bd">
+          <div class="modal-scroll">
+            <ul class="rule-list">
+              <li>活动时间：2017年1月23日-2017年2月5日</li>
+              <li>钱端(定制版)APP用户均可参与，邀请对象为钱端(定制版)APP未实名认证用户或非APP用户。</li>
+              <li>用户每成功邀请1位好友实名认证即可享1次6%高收益特权项目投资特权，不限参与次数。</li>
+              <li>活动期间，用户通过完成指定任务即可进行抽奖，每日做多可进行5次抽奖，抽奖次数可以累计。</li>
+              <li>每个项目限使用1张加息券，最高可投1万元，请在获得加息券三个工作日内进行使用，过期后不可补发。</li>
+              <li>被邀请人需准确填写邀请人（即推荐人）注册手机号，完成实名认证后邀请人即可投资特权项目，项目每个工作日11:00起售。</li>
+              <li>被邀请人首次投资享6%新手专属高收益项目，并可参与邀好友活动再享6%高收益特权项目。</li>
+              <li>严禁任何形式的作弊刷单行为，一经核实将取消奖励资格，并保留追求法律责任的权利。</li>
+              <li>最终解释权归广东钱端商务服务有限公司所有。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--中奖弹框-->
+    <div class="modal ch-modal-draw">
+      <div class="overly"></div>
+      <div class="modal-cont">
+        <div class="draw-top"><a class="modal-close" href="javascript:;"></a><img class="draw-gold" src="images/draw_gold.png">
+          <div class="ch-draw-img"></div>
+          <div class="ch-prize-name">30元闪惠代金券</div>
+        </div>
+        <div class="draw-bottom">
+          <div class="draw-wish">恭喜你，中奖了！</div>
+          <div class="draw-align"><a class="draw-btn" href="javascript:;">查看我的获奖详情</a></div>
+        </div>
+      </div>
+    </div>
+    <!--不中奖-->
+    <div class="modal ch-modal-notdraw">
+      <div class="overly"></div>
+      <div class="modal-cont">
+        <div class="draw-top"><a class="modal-close" href="javascript:;"></a><img class="draw-not" src="images/draw_not.png"></div>
+        <div class="draw-bottom">
+          <div class="draw-info">
+            <p> 很遗憾，你没有抽中奖</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--无抽奖机会-->
+    <div class="modal ch-modal-none modal-show" style="display:block">
+      <div class="overly"></div>
+      <div class="modal-cont">
+        <div class="draw-top"><a class="modal-close" href="javascript:;"></a><img class="draw-none" src="images/draw_noen.png"></div>
+        <div class="draw-bottom">
+          <div class="draw-info draw-little">
+            <p> 抱歉, 你的抽奖机会已用光！</p>
+            <p>成功邀请1名好友实名认证</p>
+            <p>即可获得2次抽奖机会</p>
+          </div>
+          <div class="draw-align"><a class="draw-btn" href="javascript:;">去邀好友</a></div>
+        </div>
+      </div>
+    </div>
+    <!--获得抽奖机会-->
+    <div class="modal ch-modal-chance">
+      <div class="overly"></div>
+      <div class="modal-cont">
+        <div class="draw-top"><a class="modal-close" href="javascript:;"></a><img class="draw-chance" src="images/draw_chance.png"></div>
+        <div class="draw-bottom">
+          <div class="draw-wish">恭喜你！</div>
+          <div class="draw-info">
+            <p>获得1次抽奖机会</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--错误提示-->
+    <div class="ch-tip-box"></div>
+    <script src="js/zepto.min.js"></script>
+    <script type="text/javascript">
+      //触发a:active
+      document.body.addEventListener('touchstart', function () {});
+      //提示
+      var toast = function (text) {
+        $('.toast').remove();
+        var $toast = '<div class="toast"><div class="toast-mask"></div><div class="toast-inner">' + text + '</div></div>';
+        $('body').append($toast);
+        setTimeout(function () {
+          $('.toast').remove();
+        }, 2000);
+      };
+      //弹框
+      function showModal(modal){
+        var $modal = $(modal);
+        $modal.show();
+        //- $("body").addClass("ov");
+        setTimeout(function(){
+          $modal.addClass("modal-show");
+        });
+      };
+      function closeModal(){
+        $(".modal").removeClass("modal-show");
+        //- $("body").unbind("touchmove");
+        $("html,body").removeClass("ov");
+        setTimeout(function(){
+          $(".modal").hide();
+        },300);
+      };
+      $(".ch-modal-close,.modal-close").on("click",function(){
+        closeModal();
+      });
+      $(".rule-btn").on("click",function(){
+        $("html,body").addClass("ov");
+        showModal(".rule-modal");
+        var _h = $(window).height() - $(".rule-btn").height()*3;
+        $(".modal-scroll").css("max-height",_h);
+      });
+    </script>
+    <script src="js/selector.js"></script>
+    <script src="js/lottery.js"></script>
+    <script>
+      //中奖弹框
+      function lottery_modal(l_text,l_img,l_mun){
+              $(".ch-prize-name").text(l_text);
+              $(".ch-draw-img").html(l_img);
+              showModal(".ch-modal-draw");
+      }
+      window.onload = function () {
+          //抽奖配置
+          lottery.lottery({
+              selector:     '#lottery',
+              width:        3,
+              height:       3,
+              index:        0,    // 初始位置
+              initSpeed:    500,  // 初始转动速度
+              // upStep:       50,   // 加速滚动步长
+              // upMax:        50,   // 速度上限
+              // downStep:     30,   // 减速滚动步长
+              // downMax:      500,  // 减速上限
+              // waiting:      5000, // 匀速转动时长
+              nolottery:    false,   //false可抽奖，true不可抽奖
+              beforeRoll: function () { // 重写滚动前事件：beforeRoll
+                      // console.log(this);
+                      //- alert(1);
+              }
+          });
+      }
+    </script>
+  </body>
+</html>
