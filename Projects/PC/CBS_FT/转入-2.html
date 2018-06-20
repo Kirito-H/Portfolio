@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="robots" content="index,follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!--meta(name='full-screen' content='yes')-->
+    <!--meta(name='x5-fullscreen' content='true')-->
+    <meta content="telephone=no, email=no" name="format-detection">
+    <link rel="stylesheet" href="style/sm.min.css">
+    <link rel="stylesheet" href="style/style.css">
+    <script src="js/lib/zepto.min.js"></script>
+    <script>$.config = {router: false}</script>
+    <title>转入</title>
+  </head>
+  <body>
+    <aside class="sideMenu">
+      <div class="container"><a class="personalCenter-trig" href="账户安全.html">
+          <div class="avatar">
+            <div class="ribbon">
+              <div class="ribbon-cont">机构会员</div>
+            </div>
+          </div>
+          <p class="user-name">FT_123456_0223</p></a>
+        <nav class="nav"><a class="nav-item" href="index.html"><i class="iconfont icon-histogram-1"></i>
+            <p>稳健理财</p></a><a class="nav-item active" href="安享活期.html"><i class="iconfont icon-update"></i>
+            <p>安享活期</p></a><a class="nav-item" href="我的资产.html"><i class="iconfont icon-rmb-big"></i>
+            <p>我的资产</p></a>
+        </nav><a class="setting-trig" href="关于CBS.html"><i class="iconfont icon-setting"></i></a>
+      </div>
+    </aside>
+    <aside class="floatBar">
+      <div class="container">
+        <div class="default-cont">
+          <div class="current-time"></div>
+          <div class="current-date"></div>
+        </div>
+        <div class="expanded-cont">
+          <div class="float-menu"><a class="menu-item" href="index.html"><i class="iconfont icon-index"></i>
+              <p>首页</p></a></div>
+        </div>
+      </div>
+    </aside>
+    <div class="page-group">
+      <div class="page page-current">
+        <header class="bar bar-nav title-bar"><a class="icon icon-left pull-left back" href="javascript:;"></a>
+          <h2 class="title">转入</h2>
+        </header>
+        <div class="content">
+          <div class="tip-bar"><i class="iconfont icon-warn"></i><span>注意：单日单用户转入限额为500万元</span></div>
+          <div class="ch-pay-form">
+            <div class="ch-pay-row">
+              <label for="">支付账户：</label>
+              <div class="ch-pay-input">
+                <input class="ch-pay-hide" type="text" name="bank" id="select-bank">
+                <div class="ch-pay-bank"><img src="images/cmcb.png">
+                  <p>尾号 ***2222</p>
+                </div>
+              </div>
+              <div class="ch-pay-right"></div>
+            </div>
+            <div class="ch-pay-row">
+              <label for="">转入金额：</label>
+              <div class="ch-pay-input">
+                <input class="ch-pay-text ch-pay-y" type="tel" placeholder="1万元起投，金额为万元整数倍">
+                <div class="ch-pay-yuan">元</div>
+                <div class="ch-warn-hastip">您今日可转入：0.00元<i class="iconfont icon-help-fill"></i>
+                  <div class="ch-buy-tip">
+                    <p>可投金额受到安享活期每日限量受理的金额所限制。同时受限于您今日已投金额</p>
+                  </div>
+                </div>
+              </div>
+              <div class="ch-pay-right"></div>
+            </div>
+            <div class="ch-pay-row">
+              <label for="">户名：</label>
+              <div class="ch-pay-input">
+                <div class="ch-pay-inner">钱端商务</div>
+              </div>
+              <div class="ch-pay-right"></div>
+            </div>
+            <div class="ch-pay-row">
+              <label for="">交易密码：</label>
+              <div class="ch-pay-input">
+                <input class="ch-pay-text" type="password" placeholder="请输入支付密码">
+              </div>
+              <div class="ch-pay-right"><a class="ch-pay-forget" href="找回交易密码-1.html">忘记交易密码</a></div>
+            </div>
+            <div class="ch-pay-row ch-pay-notleft">
+              <div class="ch-pay-check">
+                <div class="ch-checkbox ch-haschecked"></div>
+                <p>我已阅读并同意<a class="ch-agr-link" href="javascript:;">相关服务协议与风险提示</a></p>
+              </div>
+            </div>
+            <div class="ch-pay-row ch-pay-notleft">
+              <div class="ch-button">
+                <button class="ch-button-disabled" disabled="disabled">立即支付</button>
+              </div>
+            </div>
+            <div class="ch-pay-row ch-pay-notleft">
+              <div class="ch-warn-hastip"><span class="ch-orange">预计起息时间：2017-03-03 (星期五)（以实际起息时间为准）</span><i class="iconfont icon-help-fill"></i>
+                <div class="ch-buy-tip">
+                  <p>每日18:00前转入，则T+1工作日开始起息，18:00后转入时，则T+2工作日起息。转入时间以支付到账时间为准，详情可查看起息时间表。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sp-modal ch-agreement">
+      <div class="sp-modal-overlay"></div>
+      <div class="sp-modal-cont">
+        <div class="sp-modal-title">
+          <h3>服务协议</h3><a class="sp-modal-close" href="javascript:;"></a>
+        </div>
+        <div class="ch-agr-cont">
+          <p>协议内容</p>
+        </div>
+      </div>
+    </div>
+    <script src="js/lib/sm.min.js"></script>
+    <script src="js/common.js"></script>
+    <script>
+      $(function () {
+        $("#select-bank").picker({
+          toolbarTemplate: '<header class="bar bar-nav">\
+          <button class="button button-link pull-right close-picker">确定</button>\
+          </header>',
+          cols: [
+            {
+              textAlign: 'center',
+              values: ['images/cmcb.png,2222', 'images/bof.png,4343', 'images/zsyx.png,5466'],
+              displayValues: ['<img src=\"images/cmcb.png\"><p>尾号 ***2222</p>','<img src=\"images/bof.png\"><p>尾号 ***4343</p>','<img src=\"images/zsyx.png\"><p>尾号 ***5466</p>']
+            }
+          ],
+        cssClass: 'ch-picker-items'
+        });
+        $("#select-bank").on("change",function(){
+          var val = $(this).val();
+          $(".ch-pay-bank img").attr("src",val.split(",")[0]);
+          $(".ch-pay-bank p").html("尾号 ***"+val.split(",")[1]);
+        });
+        $(".ch-checkbox").on("click",function(){
+          if($(this).hasClass("ch-haschecked")){
+            $(this).removeClass("ch-haschecked");
+          }else{
+            $(this).addClass("ch-haschecked")
+          }
+        });
+        $(".ch-agr-link").on("click",function(){
+          var buttons1 = [
+            {
+              text: '《投融资平台收益权转让服务协议（投资人C版）》 ',
+              onClick: function() {
+                //- $.alert("你选择了“卖出“");
+                specModal(".ch-agreement");
+                $(".ch-agr-cont").css("max-height",$(window).height() -300);
+                  agreement = $.ajax({
+                    url: 'agreements/投融资平台收益权转让服务协议(投资人C版).html',
+                    async: false
+                  });
+                $(".ch-agr-cont").html(agreement.responseText);
+              }
+            },
+            {
+              text: '《自动投资协议》',
+              onClick: function() {
+                //- $.alert("你选择了“买入“");
+                specModal(".ch-agreement");
+                $(".ch-agr-cont").css("max-height",$(window).height() -300);
+                  agreement = $.ajax({
+                    url: 'agreements/自动投资协议.html',
+                    async: false
+                  });
+                $(".ch-agr-cont").html(agreement.responseText);
+              }
+            }
+          ];
+          var buttons2 = [
+            {
+              text: '取消',
+              bg: 'agr-actions-btn'
+            }
+          ];
+          var groups = [buttons1, buttons2];
+          $.actions(groups);
+        });
+        //提示
+        $(".content").on("click",".ch-warn-hastip i",function(){
+          var tip = $(this).parent().find(".ch-buy-tip");
+          if(tip.hasClass("ch-show")){
+            tip.removeClass("ch-show");
+            setTimeout(function(){
+              tip.hide();
+            },300);
+          }else{
+            tip.show();
+            setTimeout(function(){
+              tip.addClass("ch-show");
+            });
+          };
+        });
+        $.init()
+      });
+    </script>
+  </body>
+</html>

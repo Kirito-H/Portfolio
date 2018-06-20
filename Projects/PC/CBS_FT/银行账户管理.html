@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="robots" content="index,follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!--meta(name='full-screen' content='yes')-->
+    <!--meta(name='x5-fullscreen' content='true')-->
+    <meta content="telephone=no, email=no" name="format-detection">
+    <link rel="stylesheet" href="style/sm.min.css">
+    <link rel="stylesheet" href="style/style.css">
+    <script src="js/lib/zepto.min.js"></script>
+    <script>$.config = {router: false}</script>
+    <title>账户管理</title>
+  </head>
+  <body>
+    <div class="page-group">
+      <div class="page page-current">
+        <header class="bar bar-nav title-bar has-sider">
+          <h2 class="title">银行账户</h2>
+        </header>
+        <div class="sider-menu">
+          <div class="title">账户管理</div>
+          <div class="container">
+            <div class="list-block sider-first">
+              <ul>
+                <li class="item-content item-link"><a class="item-inner" href="账户安全.html">
+                    <div class="item-title">账户安全</div></a></li>
+              </ul>
+            </div>
+            <div class="list-block">
+              <ul>
+                <li class="item-content sider-item-title">
+                  <div class="item-inner">
+                    <div class="item-title">投资账户</div>
+                  </div>
+                </li>
+                <li class="item-content item-link"><a class="item-inner active" href="银行账户管理.html">
+                    <div class="item-title">银行账户</div></a></li>
+                <li class="item-content item-link"><a class="item-inner" href="安享活期账户管理.html">
+                    <div class="item-title">安享活期账户</div></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="content">
+          <div class="ch-bankcard-list">
+            <div class="ch-bankcard-item"><a class="ch-bankcard-del" href="javascript:;"><i class="iconfont icon-minus-fill"></i></a>
+              <div class="ch-bankcard-banklogo"><img src="images/cmcb.png"></div>
+              <p>银行账号：5555 5555 **** 5551</p>
+              <p>银行账户：钱端商务</p>
+            </div>
+            <div class="ch-bankcard-item"><a class="ch-bankcard-del" href="javascript:;"><i class="iconfont icon-minus-fill"></i></a>
+              <div class="ch-bankcard-banklogo"><img src="images/bof.png"></div>
+              <p>银行账号：5555 5555 **** 5551</p>
+              <p>银行账户：钱端商务</p>
+            </div>
+            <div class="ch-bankcard-item"><a class="ch-bankcard-del" href="javascript:;"><i class="iconfont icon-minus-fill"></i></a>
+              <div class="ch-bankcard-banklogo"><img src="images/zsyx.png"></div>
+              <p>银行账号：5555 5555 **** 5551</p>
+              <p>银行账户：钱端商务</p>
+            </div>
+            <div class="ch-bankcard-item"><a class="ch-bankcard-del" href="javascript:;"><i class="iconfont icon-minus-fill"></i></a>
+              <div class="ch-bankcard-banklogo"><img src="images/cmcb.png"></div>
+              <p>银行账号：5555 5555 **** 5551</p>
+              <p>银行账户：钱端商务</p>
+            </div><a class="ch-bankcard-item" href="javascript:;">
+              <div class="ch-bankcard-add"><i class="iconfont icon-plus"></i><i class="iconfont icon-hexagon"></i>
+                <p>添加银行账户</p>
+              </div></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <aside class="sideMenu">
+      <div class="container"><a class="personalCenter-trig active" href="账户安全.html">
+          <div class="avatar">
+            <div class="ribbon">
+              <div class="ribbon-cont">机构会员</div>
+            </div>
+          </div>
+          <p class="user-name">FT_123456_0223</p></a>
+        <nav class="nav"><a class="nav-item" href="index.html"><i class="iconfont icon-histogram-1"></i>
+            <p>稳健理财</p></a><a class="nav-item" href="安享活期.html"><i class="iconfont icon-update"></i>
+            <p>安享活期</p></a><a class="nav-item" href="我的资产.html"><i class="iconfont icon-rmb-big"></i>
+            <p>我的资产</p></a>
+        </nav><a class="setting-trig" href="关于CBS.html"><i class="iconfont icon-setting"></i></a>
+      </div>
+    </aside>
+    <aside class="floatBar">
+      <div class="container">
+        <div class="default-cont">
+          <div class="current-time"></div>
+          <div class="current-date"></div>
+        </div>
+        <div class="expanded-cont">
+          <div class="float-menu"><a class="menu-item" href="index.html"><i class="iconfont icon-index"></i>
+              <p>首页</p></a></div>
+        </div>
+      </div>
+    </aside>
+    <script src="js/lib/sm.min.js"></script>
+    <script src="js/common.js"></script>
+    <script>
+      $(".content").on("click",".ch-bankcard-del",function(){
+        var bankCard = $(this).parents(".ch-bankcard-item");
+        $.confirm('您确定删除该银行卡信息吗？',
+        function () {
+          bankCard.addClass("ch-bankcard-hide");
+          setTimeout(function(){
+            bankCard.remove();
+          },500)
+        })
+      })
+    </script>
+  </body>
+</html>

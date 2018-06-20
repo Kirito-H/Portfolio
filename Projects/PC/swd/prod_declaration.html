@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="keywords" content=""/>
+  <meta name="description" content=""/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="cache-control" content="public">
+  <title>产品申报 - 省微店营销服务平台</title>
+
+  <link rel="stylesheet" href="css/common.css"/>
+  <link rel="stylesheet" href="css/contnetRight.css"/>
+  <link rel="stylesheet" type="text/css" href="js/easyui-1.3.6/themes/bootstrap/easyui.css">
+  <link rel="stylesheet" type="text/css" href="js/easyui-1.3.6/themes/icon.css">
+  <link rel="stylesheet" href="css/style.css"/>
+  <!--[if lte IE 9]>
+  <link rel="stylesheet" href="css/for_ie.css"/>
+  <![endif]-->
+</head>
+<body>
+  <div class="wrapper">
+    <header class="header">
+      <div class="hd-top">
+        <div class="w1000">
+          <div class="noticebar">
+            <marquee direction="left" class="noticfont f14" onmousemove="stop()" onmouseout="start()" scrollamount="3" scrolldelay="100"></marquee>
+          </div>
+          <div class="fr msg">欢迎您！黄小二&nbsp;&nbsp; 权限：店长&nbsp;&nbsp;
+            <a title="账户管理" href="http://10.18.97.147:36080/miniGovOmsWeb/mini/index.jsp?itemId=1510#" class="setting">设置</a>|
+            <a title="刷新" href="javascript:location.reload()">刷新</a>|
+            <a title="系统退出" id="logout">退出</a>
+            <div class="usertic png" style="display:none;">
+              <p>工号：<span>黄小二</span></p>
+              <p>
+                <span class="link_blue"><a style="font-weight:normal;" href="javascript:editPwd()">修改密码</a></span>
+                <span class="link_blue"><a style="font-weight:normal;" href="javascript:editInfos()">修改资料</a></span>
+              </p>
+              <p class="mb10">岗位：
+              <span>
+                <select id="postId" class="tdinput" style="width:120px;" onchange="changePost()">
+                  <option value="27002" selected="selected">店长</option>
+                  <option value="47002">录单员</option>
+                </select>
+              </span>
+              </p>
+              <p>店铺：
+              <span>
+                <select name="mini" id="mini" class="tdinput" style="width:120px;" onchange="changeStore()">
+                  <option value="10321" selected="selected">天河店</option>
+                </select>
+              </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end by YuShengke -->
+
+      <!--菜单-->
+      <div class="header-wrap">
+        <div class="header-inner y-row">
+          <div class="w1000 rel" style="width:1024px;">
+            <nav id="J_Nav">
+              <a href="index.html" class="logo" id="J_logo">
+                <img class="header-logo" src="images/logo.png">
+              </a>
+              <ul id="J_Menu">
+                <a class="png" href="http://10.18.97.147:36080/miniGovOmsWeb/custHome/index.action" title="首页"><li><h2>首页</h2></li></a>
+                <a class="png" href="putOnSale.html" title="产品上架"><li class="nav-bg"><h2>产品上架</h2></li></a>
+                <a class="png" href="myShop.html" title="我的店铺"><li><h2>我的店铺</h2></li></a>
+                <a class="png" href="http://10.18.97.147:36080/miniGovOmsWeb/mini/index.jsp?itemId=1209" title="订单管理"><li><h2>订单管理</h2></li></a>
+                <a class="png" href="http://10.18.97.147:36080/miniGovOmsWeb/mini/index.jsp?itemId=1212" title="营销推广"><li><h2>营销推广</h2></li></a>
+                <a class="png" href="http://10.18.97.147:36080/miniGovOmsWeb/mini/index.jsp?itemId=1219" title="数据分析"><li><h2>数据分析</h2></li></a>
+                <li class="sub rel">
+                  <h2 style="padding-left:5px;">更多<span><img class="ml10" src="images/f-more.png" /></span></h2>
+                  <div class="sub-nav none">
+                    <a href="http://10.18.97.147:36080/miniGovOmsWeb/mini/index.jsp?itemId=1216" title="商机管理">商机管理</a>
+                    <a href="http://10.18.97.147:36080/miniGovOmsWeb/mini/index.jsp?itemId=1214" title="客户维系">客户维系</a>
+                    <a href="http://10.18.97.147:36080/miniGovOmsWeb/mini/index.jsp?itemId=1400" title="我的二维码">我的二维码</a>
+                    <a href="http://10.18.97.147:36080/miniGovOmsWeb/mini/index.jsp?itemId=1512" title="我的店员">我的店员</a>
+                    <a href="http://10.18.97.147:36080/miniGovOmsWeb/mini/index.jsp?itemId=225024" title="新版产品管理">新版产品管理</a>
+                  </div>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="cont-container w1000">
+      <!--内容-->
+      <div class="wap content clear">
+        <!--左边菜单-->
+        <aside class="contentleft fl">
+          <div class="aside bor-ccc left">
+            <ul class="menuf list-ad" style="padding-top: 0;">
+              <li>
+                <a id="1270" href="sjzq.html" uri="/miniGovOmsWeb/decorate/toWebsiteInfo.action">
+                  <div class="border"></div>
+                  <em class="icon fl n1"></em><span class="text-ad">手机专区</span>
+                </a>
+              </li>
+              <li>
+                <a id="1224" href="kdzq.html" uri="/miniGovOmsWeb/website/tranConfigAction_toInit.action">
+                  <div class="border"></div>
+                  <em class="icon fl n2"></em><span class="text-ad">宽带专区</span>
+                </a>
+              </li>
+              <li>
+                <a id="1271" href="tczq.html" uri="/miniGovOmsWeb/cms/visual/toEditPage.action">
+                  <div class="border"></div>
+                  <em class="icon fl n3"></em><span class="text-ad">套餐专区</span>
+                </a>
+              </li>
+              <li>
+                <a id="1501" uri="/miniGovOmsWeb/mgr/mini/website/websiteList.jsp">
+                  <div class="border"></div>
+                  <em class="icon fl n4"></em><span class="text-ad">配件专区</span>
+                </a>
+              </li>
+              <li>
+                <a id="" uri="/">
+                  <div class="border"></div>
+                  <em class="icon fl n5"></em><span class="text-ad">服务专区</span>
+                </a>
+              </li>
+              <li>
+                <a class="curr" id="" href="dpzx_fresh.html" uri="/">
+                  <div class="border"></div>
+                  <em class="icon fl n6"></em><span class="text-ad">店铺专享</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </aside>
+
+        <!--右边内容开始-->
+        <div class="conentRight fl sp2">
+          <div class="conentR sp2">
+            <div class="breadcrumb sp2">当前位置 : 店铺专享 > 产品申报</div>
+            <section class="sec02">
+              <h2 class="sec-title">
+                <span class="tit-txt">产品申报</span>
+              </h2>
+              <div class="sub-section02">
+                <div class="cont">
+                  <div class="form-item02">
+                    <label class="label-sp1" for="applier"><i class="c02">*</i>申报人 : </label>
+                    <input id="applier" class="inp-txt01" type="text" placeholder="请输入您的姓名"/>
+                  </div><!--/form-item02-->
+                  <div class="form-item02">
+                    <label class="label-sp1" for="yourShop"><i class="c02">*</i>所属店铺 : </label>
+                    <input id="yourShop" class="inp-txt01" type="text" placeholder="请输入您的店铺名称"/>
+                  </div><!--/form-item02-->
+                  <div class="form-item02">
+                    <label class="label-sp1" for="contactNum"><i class="c02">*</i>联系电话 : </label>
+                    <input id="contactNum" class="inp-txt01" type="text" placeholder="请输入您的联系电话"/>
+                  </div><!--/form-item02-->
+                  <div class="form-item02">
+                    <label class="label-sp1">申报事由 : </label>
+                    <textarea class="textarea01 sp2"></textarea>
+                  </div><!--/form-item02-->
+                </div><!--/cont-->
+                <div class="btn-wrap01 btn-wrap01-2">
+                  <a class="btn01 btn01-4 mr15" onclick="window.history.back();" href="javascript:;">取消</a>
+                  <a class="btn01 btn01-5" href="dpzx.html">提交</a>
+                </div><!--/btn-wrap01-->
+              </div><!--/sub-section02-->
+            </section><!--/sec02-->
+          </div><!--/conentR-->
+        </div><!--/conentRight-->
+      </div><!--/content-->
+    </div><!--/cont-container-->
+  </div><!--/wrapper-->
+
+
+  <!--设置-->
+  <div class="panel window" style="display: none; width: 288px; left: 524.5px; top: 211.5px;">
+    <div class="panel-header panel-header-noborder window-header" style="width: 288px;">
+      <div class="panel-title panel-with-icon">修改密码</div><div class="panel-icon icon-save"></div>
+      <div class="panel-tool"><a class="panel-tool-close" href="javascript:void(0)"></a></div>
+    </div>
+    <div id="dd" class="easyui-dialog panel-body panel-body-noborder window-body" title="" data-options="iconCls:&#39;icon-save&#39;,closed:true,buttons:[{
+				text:&#39;Save&#39;,
+				handler:function(){
+				savePwd();
+				}
+			},{
+				text:&#39;Close&#39;,
+				handler:function(){
+				$(&#39;#dd&#39;).window(&#39;close&#39;);
+				}
+			}]" style="overflow: hidden; width: 286px; height: 194px;">
+      <div class="panel" style="display: block; width: 286px;">
+        <div style="width: 286px; height: 157px;" title="" class="panel-body panel-body-noheader panel-body-noborder dialog-content">
+          <form id="editPwd" action="" method="post">
+            <table style="width:100%;">
+              <tbody>
+                <tr style="width:100%;">
+                  <td style="width:25%;">旧密码：</td>
+                  <td width="75%"><input name="password" id="password" onblur="validPwd()" style="height:25px;width:150px;"></td>
+                  <td><span id="okjpg" style="display:none;"><img src="images/ok.jpg" title="密码正确" width="20px;" height="20px;"></span><span id="nojpg" style="display:none;"><img title="密码错误" src="images/no.jpg" width="20px;" height="20px;"></span></td>
+                </tr>
+                <tr style="width:100%">
+                  <td style="width:25%;">新密码：</td>
+                  <td width="50%"><input name="newPwd" id="newPwd" type="password" style="height:25px;width:150px;"></td>
+                </tr>
+                <tr style="height:10px;"></tr>
+                <tr style="width:100%">
+                  <td style="width:27%;">确认密码：</td>
+                  <td width="73%"><input name="rePwd" id="rePwd" type="password" style="height:25px;width:150px;"></td>
+                </tr>
+                <tr style="height:10px;"></tr>
+                <tr>
+                  <td colspan="2"><span id="span1" style="display:none;color:red;">提示：<span id="span1_1"></span></span></td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+        </div>
+      </div>
+      <div class="dialog-button">
+        <a href="javascript:void(0)" class="l-btn l-btn-small" group="" id=""><span class="l-btn-left"><span class="l-btn-text">Save</span></span></a><a href="javascript:void(0)" class="l-btn l-btn-small" group="" id=""><span class="l-btn-left"><span class="l-btn-text">Close</span></span></a>
+      </div>
+    </div>
+  </div>
+  <div class="window-shadow" style="display: none; left: 524.5px; top: 211.5px;"></div>
+  <div class="panel window" style="display: none; width: 588px; left: 383px; top: 126.5px;"><div class="panel-header panel-header-noborder window-header" style="width: 588px;"><div class="panel-title panel-with-icon">修改资料</div><div class="panel-icon icon-save"></div><div class="panel-tool"><a class="panel-tool-close" href="javascript:void(0)"></a></div></div>
+  <div id="updateinfodiv" class="easyui-dialog panel-body panel-body-noborder window-body" title="" data-options="iconCls:&#39;icon-save&#39;,closed:true,buttons:[{
+				text:&#39;保存&#39;,
+				handler:function(){
+					saveInfo();
+				}
+			},{
+				text:&#39;关闭&#39;,
+				handler:function(){
+				$(&#39;#updateinfodiv&#39;).window(&#39;close&#39;);
+				}
+			}]" style="overflow: hidden; width: 586px; height: 364px;"><div class="panel" style="display: block; width: 586px;">
+    <div style="width: 586px; height: 327px;" title="" class="panel-body panel-body-noheader panel-body-noborder dialog-content">
+      <form action="http://10.18.97.147:36080/miniGovOmsWeb/callback/savePersonalInfo.action" id="editinfoForm" method="POST" enctype="multipart/form-data">
+        <input id="flags" type="hidden">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="frinput">
+          <tbody>
+            <tr style="background:#fafafa;">
+              <td colspan="2"><h2 style="border: 0; margin-left:230px;font-size:26px; font-weight:normal;">重建个人档案  </h2>  	</td>
+            </tr>
+            <tr>
+              <th>电信工号：</th>
+              <td><label class="rel"><input name="personalInfo.sysstaff.staffId" type="text" class="gray inputTxt inpsty size300 fl" disabled="disabled"></label></td>
+            </tr>
+            <tr>
+              <th>姓名：</th>
+              <td><input name="personalInfo.sysstaff.staffName" type="text" class="gray inputTxt inpsty size300 fl" id="textfield4" caption="cname:姓名;type:string;isnull:false;maxlen:100;"></td>
+            </tr>
+            <tr id="role_tr">
+              <th>角色：</th>
+              <td>
+                <input type="checkbox" name="managerRole" value="mini_manager">&nbsp;&nbsp;店长 &nbsp;&nbsp;&nbsp;
+                <input type="checkbox" name="operatorRole" value="mini_operator">&nbsp;&nbsp;录单员 &nbsp;&nbsp;&nbsp;
+                <input type="checkbox" name="employeeRole" value="mini_employee">&nbsp;&nbsp;店员
+              </td>
+            </tr>
+            <tr id="recommendCode_th">
+              <th>揽装人编码：</th>
+              <td><label class="rel"><a id="samlla" href="javascript:submitCheck();" style="display:none;">检测是否占用</a>
+                <input id="recommendCode" name="personalInfo.recommendCode" type="text" class="gray inputTxt inpsty size300 fl" style="background:#fff;" caption="cname:揽装人编码;type:string;isnull:false;maxlen:20;" onkeyup="check();">
+                <img id="checkIcon" style="display:none;width:13px;height:13px;padding-top:4px;">
+              </label></td>
+            </tr>
+            <tr>
+              <th>联系方式：</th>
+              <td><input name="personalInfo.sysstaff.linkPhone" type="text" class="gray inputTxt inpsty size300 fl" id="textfield4" caption="cname:联系方式;isnull:true;maxlen:18;"></td>
+            </tr>
+            <tr>
+              <th>个人头像：</th>
+              <td>
+                <input name="personalInfo.sysstaff.certPhoto" type="text" readonly="" class="gray inputTxt inpsty size300 fl" id="logo" caption="cname:图片;type:string;isnull:true;">
+                <span class="btna fl"></span>
+                <div class="fileDiv" style="display: inline;">
+                  <input type="file" name="image" id="headImage" style=" width:65px; height:30px;-moz-opacity:0;filter:alpha(opacity=0);opacity:0;" onchange="logochange()">
+                </div>
+                <div class="imgDiv" style="display: inline;">
+                 <span class="btna fl"><a href="http://10.18.97.147:36080/miniGovOmsWeb/mini/index.jsp?itemId=1510#" style="width:65px"><img src="images/up.png">上传</a></span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th>所属区域：</th>
+              <td>
+                <input type="hidden" id="contextPath" value="/miniGovOmsWeb">
+                <!--  <select id='select2' name='sysstaffBean.cityId'><option value='200'>广州</option><option value='755'>深圳</option><option value='769'>东莞</option><option value='756'>珠海</option><option value='757'>佛山</option><option value='754'>汕头</option><option value='751'>韶关</option><option value='762'>河源</option><option value='758'>肇庆</option><option value='753'>梅州</option><option value='752'>惠州</option><option value='660'>汕尾</option><option value='760'>中山</option><option value='750'>江门</option><option value='662'>阳江</option><option value='759'>湛江</option><option value='763'>清远</option><option value='766'>云浮</option><option value='768'>潮州</option><option value='663'>揭阳</option><option value='668'>茂名</option><option value='440'>省直属</option></select>
+
+                  <script type="text/javascript">
+                            $("select[name='sysstaffBean.cityId']").attr("class","selsty size100 fl ");
+                            $("select[name='sysstaffBean.cityId']").prepend("<option value=''>请选择</option>");
+                            $("select[name='sysstaffBean.cityId']").val("");
+                  </script>
+           -->
+                <input name="personalInfo.sysstaff.cityId" class="gray inputTxt inpsty  fl " style="width:auto">
+                <span class="fb  fl marL10"><input name="personalInfo.sysstaff.regionId" id="select3" class="gray inputTxt inpsty  fl " style="width:auto"></span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </div>
+  </div>
+  <div class="dialog-button"><a href="javascript:void(0)" class="l-btn l-btn-small" group="" id=""><span class="l-btn-left"><span class="l-btn-text">保存</span></span></a><a href="javascript:void(0)" class="l-btn l-btn-small" group="" id=""><span class="l-btn-left"><span class="l-btn-text">关闭</span></span></a></div></div></div><div class="window-shadow" style="display: none; left: 383px; top: 126.5px;"></div><div id="xhePanel"></div><div id="xheShadow"></div><div id="xheCntLine"></div>
+
+
+  <script src="js/jquery-1.11.1.min.js"></script>
+  <script src="js/base.js" ></script>
+  <script type="text/javascript" src="js/easyui-1.3.6/jquery.easyui.min.js"></script>
+  <script type="text/javascript" src="js/easyui-1.3.6/locale/easyui-lang-zh_CN.js"></script>
+  <script type="text/javascript" src="js/core-common.js"></script>
+  <script src="js/main.js"></script>
+  <!--顶部-->
+  <script type="text/javascript">
+    $(function(){
+      $('#logout').click(function() {
+        if(confirm('确定要退出系统?')) {
+          location.href="/miniGovOmsWeb/sysmgr/login/logout.action";
+        }
+      });
+    });
+    function editInfos()
+    {
+      $.post("/miniGovOmsWeb/callback/editPersonalInfo.action",function(data){
+        var dataObj=eval("("+data+")");
+        var logoPath=dataObj.sysstaff.certPhoto ;
+        var logo=logoPath.substring(logoPath.lastIndexOf('/')+1,logoPath.length);
+        $('input[id="logo"]').val(logo);
+        $('input[name="personalInfo.sysstaff.staffId"]').val(dataObj.sysstaff.staffId);
+        $('input[name="personalInfo.sysstaff.staffName"]').val(dataObj.sysstaff.staffName);
+        $('input[name="personalInfo.recommendCode"]').val(dataObj.recommendCode);
+
+        $('input[name="personalInfo.sysstaff.linkPhone"]').val(dataObj.sysstaff.linkPhone);
+        $('input[name="personalInfo.sysstaff.cityId"]').val(dataObj.cityName);
+        $('input[name="personalInfo.sysstaff.regionId"]').val(dataObj.regionName);
+        $('input[name="personalInfo.sysstaff.cityId"]').attr("disabled","disabled");
+        $('input[name="personalInfo.sysstaff.regionId"]').attr("disabled","disabled");
+        for(var i=0;i<dataObj.postCodeList.length;i++)
+        {
+          if(dataObj.postCodeList[i]=="mini_manager")
+          {
+            $('input[name="managerRole"]').attr("checked","checked");
+            $('input[name="managerRole"]').attr("disabled","disabled");
+          }
+          if(dataObj.postCodeList[i]=="mini_employee")
+          {
+            $('input[name="employeeRole"]').attr("checked","checked");
+            $('input[name="employeeRole"]').attr("disabled","disabled");
+          }
+          if(dataObj.postCodeList[i]=="mini_operator")
+          {
+            $('input[name="operatorRole"]').attr("checked","checked");
+            $('input[name="operatorRole"]').attr("disabled","disabled");
+          }
+          if(dataObj.postCodeList[i]=="mini_administrator"||dataObj.postCodeList[i]=="two_manager"){
+            $('#role_tr').hide();
+            $('#recommendCode_th').hide();
+          }
+        }
+      });
+      $("#checkIcon").css("display","none");
+      $("#updateinfodiv").window("open");
+    }
+    function editPwd()
+    {
+      $("#dd").window("open");
+      $("#password").focus();
+    }
+    function changeStore()
+    {
+      $.post("/miniGovOmsWeb/callback/changeStore.action",{mini:$("#mini").val()}, function (data, textStatus){
+        location.href="/miniGovOmsWeb/custHome/index.action";
+      } );
+    }
+    function changePost()
+    {
+      $.post("/miniGovOmsWeb/callback/changePost.action",{miniPost:$("#postId").val()}, function (data, textStatus){
+        location.href="/miniGovOmsWeb/custHome/index.action";
+      } );
+    }
+    function validPwd()
+    {
+      var password= $("#password").val();
+      $.post("/miniGovOmsWeb/callback/validPwd.action",{passwd:password},function(data)
+      {
+        if(data==1)
+        {
+          $("#okjpg").css("display","block");
+          $("#nojpg").css("display","none");
+        }else
+        {
+          $("#nojpg").css("display","block");
+          $("#okjpg").css("display","none");
+        }
+      });
+    }
+    function savePwd()
+    {
+      if($('#nojpg').css('display')=="block")
+      {
+        $("#span1").css('display','block');
+        $("#span1_1").text("旧密码不正确！");
+      }
+      else if($("#newPwd").val()=="")
+      {
+        $("#span1").css('display','block');
+        $("#span1_1").text("新密码不能为空！");
+      }
+      else if($("#newPwd").val()!=$("#rePwd").val())
+      {
+        $("#span1").css('display','block');
+        $("#span1_1").text("两次密码不一致！");
+      }
+      else
+      {
+        $.post("/miniGovOmsWeb/callback/editPwd.action",$("#editPwd").serialize(),function(data){
+          if(data=="true")
+          {
+            $("#span1").css('display','block');
+            $("#span1_1").text("修改成功！");
+          }else
+          {
+            $("#span1").css('display','block');
+            $("#span1_1").text("修改失败！");
+          }
+          $("#password").val("");
+          $("#newPwd").val("");
+          $("#rePwd").val("");
+          $("#nojpg").css("display","none");
+          $("#okjpg").css("display","none");
+        });
+      }
+    }
+    function showNoticeDetail(id){
+      var url = "/miniGovOmsWeb/notice/noticeDetail.action?id="+id;
+      var obj = window.open(url,"_blank");
+      setTimeout(function(){// 避免出现弹出窗口标题为url的情况
+        obj.document.title = "公告信息";
+      }, 1000) ;
+    }
+  </script>
+  <!-- add by YuShengke 2014/09/23 -->
+  <script type="text/javascript">
+    $(function(){
+      $('.sub').hover(function(){
+        $('.sub-nav').toggle();
+      });
+    });
+  </script>
+  <!--[if lt IE 8]>
+  <script>
+    alert('为了您更好体验本站，建议您更新您的IE浏览器至IE9或以上，或者使用现代浏览器（Chrome，Firefox，Opera，Safari）访问，谢谢。')
+  </script>
+  <![endif]-->
+  <!--[if IE 6]>
+  <script src="js/DD_belatedPNG.min.js" type="text/javascript"></script>
+  <![endif]-->
+</body>
+</html>

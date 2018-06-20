@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="robots" content="index,follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!--meta(name='full-screen' content='yes')-->
+    <!--meta(name='x5-fullscreen' content='true')-->
+    <meta content="telephone=no, email=no" name="format-detection">
+    <link rel="stylesheet" href="style/sm.min.css">
+    <link rel="stylesheet" href="style/style.css">
+    <script src="js/lib/zepto.min.js"></script>
+    <script>$.config = {router: false}</script>
+    <title>页面交互用法参考demo</title>
+    <style>
+      #demo .item {
+          margin-bottom: 20px;
+      }
+      .y-btn01 {
+          font-size: 90%;
+      }
+      .warn {
+          background: rgba(247, 17, 19, .8);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-group">
+      <div class="page page-current">
+        <div class="content" id="demo">
+          <div class="content-block">
+            <div class="item"><a class="y-btn01" id="toastTrig_1" href="javascript:;">toast提示一: 普通(2s)</a></div>
+            <div class="item"><a class="y-btn01" id="toastTrig_2" href="javascript:;">toast提示二: 自定义显示时长</a></div>
+            <div class="item"><a class="y-btn01" id="toastTrig_3" href="javascript:;">toast提示三: 自定义显示时长 & 自定义样式</a></div>
+          </div>
+          <div class="content-block">
+            <div class="item"><a class="y-btn01" id="modalTrig_1" href="javascript:;">对话框一: 普通通知</a></div>
+            <div class="item"><a class="y-btn01" id="modalTrig_2" href="javascript:;">对话框二: 确认操作</a></div>
+            <div class="item"><a class="y-btn01" id="modalTrig_3" href="javascript:;">对话框三: 自定义(可设置标题)</a></div>
+          </div>
+          <div class="content-block">
+            <div class="item"><a class="y-btn01" id="indicatorTrig_1" href="javascript:;">加载指示一: 普通loading</a></div>
+            <div class="item"><a class="y-btn01" id="indicatorTrig_2" href="javascript:;">加载指示二: 自定义文案loading</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/lib/sm.min.js"></script>
+    <script src="js/common.js"></script>
+    <script>
+      $(function () {
+          //闪现提示(停顿显示几秒然后消失)
+          $("#toastTrig_1").on('click', function () {
+              $.toast("我是toast提示，出来露个脸然后消失~");
+          });
+          $("#toastTrig_2").on('click', function () {
+              $.toast("露脸ing......我要待够4s", 4000);
+          });
+          $("#toastTrig_3").on('click', function () {
+              $.toast("我穿的是超人牌红底", 3000, 'warn');
+          });
+      
+          //对话框
+          $("#modalTrig_1").on('click', function () {
+              $.alert("然后, 就没有然后了");
+          });
+          $("#modalTrig_2").on('click', function () {
+              $.confirm("今晚留下加班!");
+          });
+          $("#modalTrig_3").on('click', function () {
+              $.modal({
+                  title: '会议主题',  //可选. Modal 标题 (可以是html字符串)
+                  text: '是不是欠我一顿饭？',  //Modal 文本 (可以是html字符串)
+                  afterText: '我是点心',  //可选. 将被放在"text"后的文本 (可以是html字符串)
+                  buttons: [
+                      {
+                          text: '是的',
+                          bold: false,  //可选. 设置按钮文案是否加粗, 默认false
+                          onClick: function () {
+                              $.modal({
+                                  text: '2333',
+                                  buttons: [{
+                                      text: '666666'
+                                  }]
+                              });
+                          }
+                      },
+                      {
+                          text: '同意左边说的',
+                          onClick: function () {
+                              $.alert("2了8");
+                          }
+                      }
+                  ],
+                  extraClass: ''  //可选. 给modal的根节点.modal附加一或多个自定义class，方便按需定制不同的modal样式
+              });
+          });
+      
+          //加载指示
+          $("#indicatorTrig_1").on('click', function () {
+              $.showIndicator();
+              setTimeout(function () {
+                  $.hideIndicator(); //隐藏指示器
+              }, 2000);
+          });
+          $("#indicatorTrig_2").on('click', function () {
+              $.showPreloader('跟着我左手右手一个慢动作...'); //参数留空则默认显示文案"加载中"
+              setTimeout(function () {
+                  $.hidePreloader(); //隐藏预加载
+              }, 3000);
+          });
+      });
+    </script>
+  </body>
+</html>

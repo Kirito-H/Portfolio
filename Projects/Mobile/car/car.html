@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="robots" content="index,follow">
+    <script>!function(a,b){function c(){var b=f.getBoundingClientRect().width;b/i>540&&(b=540*i);var c=b/10;f.style.fontSize=c+"px",k.rem=a.rem=c}var d,e=a.document,f=e.documentElement,g=e.querySelector('meta[name="viewport"]'),h=e.querySelector('meta[name="flexible"]'),i=0,j=0,k=b.flexible||(b.flexible={});if(g){console.warn("将根据已有的meta标签来设置缩放比例");var l=g.getAttribute("content").match(/initial\-scale=([\d\.]+)/);l&&(j=parseFloat(l[1]),i=parseInt(1/j))}else if(h){var m=h.getAttribute("content");if(m){var n=m.match(/initial\-dpr=([\d\.]+)/),o=m.match(/maximum\-dpr=([\d\.]+)/);n&&(i=parseFloat(n[1]),j=parseFloat((1/i).toFixed(2))),o&&(i=parseFloat(o[1]),j=parseFloat((1/i).toFixed(2)))}}if(!i&&!j){var p=a.navigator.userAgent,q=(!!p.match(/android/gi),!!p.match(/iphone/gi)),r=q&&!!p.match(/OS 9_3/),s=a.devicePixelRatio;i=q&&!r?s>=3&&(!i||i>=3)?3:s>=2&&(!i||i>=2)?2:1:1,j=1/i}if(f.setAttribute("data-dpr",i),!g)if(g=e.createElement("meta"),g.setAttribute("name","viewport"),g.setAttribute("content","initial-scale="+j+", maximum-scale="+j+", minimum-scale="+j+", user-scalable=no"),f.firstElementChild)f.firstElementChild.appendChild(g);else{var t=e.createElement("div");t.appendChild(g),e.write(t.innerHTML)}a.addEventListener("resize",function(){clearTimeout(d),d=setTimeout(c,300)},!1),a.addEventListener("pageshow",function(a){a.persisted&&(clearTimeout(d),d=setTimeout(c,300))},!1),"complete"===e.readyState?e.body.style.fontSize=12*i+"px":e.addEventListener("DOMContentLoaded",function(){e.body.style.fontSize=12*i+"px"},!1),c(),k.dpr=a.dpr=i,k.refreshRem=c,k.rem2px=function(a){var b=parseFloat(a)*this.rem;return"string"==typeof a&&a.match(/rem$/)&&(b+="px"),b},k.px2rem=function(a){var b=parseFloat(a)/this.rem;return"string"==typeof a&&a.match(/px$/)&&(b+="rem"),b}}(window,window.lib||(window.lib={}));</script>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta content="telephone=no, email=no" name="format-detection">
+    <title>新手财富之路</title>
+    <link rel="stylesheet" href="style/style.css">
+  </head>
+  <script>
+    function isAndroid() {
+        var ua = navigator.userAgent.toLowerCase();
+        return !!(/android/.test(ua));
+    }
+    //获取iPhone设备型号 & 系统
+    var getIphoneDeviceInfo = function() {
+        var ua = navigator.userAgent.toLowerCase(),
+                tgt_str = 'devicemodel=iphone',
+                ip_index = ua.indexOf(tgt_str),
+                sub_str = ua.substring(ip_index + tgt_str.length),
+                end_ind = sub_str.indexOf(')'),
+                result = {},
+                tmp_arr = [],
+                device,
+                os_str = 'iphone os',
+                os_index = ua.indexOf(os_str),
+                os_sub_str = ua.substring(os_index + os_str.length),
+                os_end_ind = os_sub_str.indexOf(' like');
+        //获取手机设备对应版本
+        result.version = sub_str.substring(0, end_ind);
+        tmp_arr = result.version.split(',');
+        result.ipMainVer = tmp_arr[0];
+        result.ipSubVer = tmp_arr[1];
+        if (result.version === '1,1') { device = 'iPhone 1G' }
+        if (result.version === '1,2') { device = 'iPhone 3G' }
+        if (result.version === '2,1') { device = 'iPhone 3GS' }
+        if (result.version === '3,1') { device = 'iPhone 4(GSM)' }
+        if (result.version === '3,3') { device = 'iPhone 4(CDMA)' }
+        if (result.version === '4,1') { device = 'iPhone 4s' }
+        if (result.version === '5,1') { device = 'iPhone 5(GSM)' }
+        if (result.version === '5,2') { device = 'iPhone 5(CDMA)' }
+        if (result.version === '5,3' || result.version === '5,4') { device = 'iPhone 5c' }
+        if (result.version === '6,1' || result.version === '6,2') { device = 'iPhone 5s' }
+        if (result.version === '7,1') { device = 'iPhone 6 plus' }
+        if (result.version === '7,2') { device = 'iPhone 6' }
+        if (result.version === '8,1') { device = 'iPhone 6s' }
+        if (result.version === '8,2') { device = 'iPhone 6s plus' }
+        if (result.version === '8,4') { device = 'iPhone SE' }
+    
+        //获取手机系统版本
+        result.os_version = os_sub_str.substring(0, os_end_ind);
+        tmp_arr = result.os_version.split('_');
+        result.os_mainVer = tmp_arr[0];
+        result.os_midVer = tmp_arr[1];
+        result.os_subVer = tmp_arr[2];
+    
+        return {
+            device: device,
+            ipMainVer: result.ipMainVer,
+            ipSubVer: result.ipSubVer,
+            osVersion: result.os_version,
+            osMainVer: result.os_mainVer,
+            osMidVer: result.os_midVer,
+            osSubVer: result.os_subVer
+        }
+    };
+  </script>
+  <body>
+    <!--start-下载app提示浮层-->
+    <div class="share-appdown" id="shareAppDown"><img src="images/logo.png">
+      <div class="share-app-title">
+        <h3>钱端(定制版)</h3>
+        <p>理财达人首选APP</p>
+      </div><a class="share-appdown-button" href="https://mobile.qianduan.com/app/download">下载</a><a class="share-appdown-close" href="javascript:;"></a>
+    </div>
+    <script>
+      //判断是否钱端app内打开
+      function isApp() {
+          var ua = navigator.userAgent.toLowerCase();
+          return !!(/qdapp/.test(ua));
+      };
+      if (!isApp()) {
+          document.getElementById('shareAppDown').style.display = 'block';
+      }
+    </script>
+    <!--end-下载app提示浮层-->
+    <!--活动规则--><a class="ch-rule-btn" href="javascript:;">活动规则</a>
+    <main class="content-wp qdCar-game"><img class="theme" src="images/theme.png" alt="新手财富之路 让老司机带带你"><img class="dec-coin-stars" src="images/dec_coin_stars.png" alt=""><a class="side-ad-trig" href="#!"><img src="images/side_ad_trig.png" alt="推广入口"></a>
+      <div class="side-fl-r"><a class="tips-trig" href="javascript:;"></a><a class="lottery-trig" href="#!"><span class="badge">3</span></a></div>
+      <div class="game-sec">
+        <script>
+          if (isAndroid()) {
+              document.querySelector('.game-sec').classList.add('android');
+          }
+          else if(getIphoneDeviceInfo().ipMainVer >= 8) {
+              if(! (getIphoneDeviceInfo().osMainVer >= 10 && getIphoneDeviceInfo().osMidVer >= 1 && getIphoneDeviceInfo().osSubVer >= 1) ) {
+                  document.querySelector('.game-sec').classList.add('ip6sP');
+              }
+          }
+        </script><img class="game-map" src="images/game_map.png" alt="钱端车考驾照地图"><img class="road" id="road" src="images/road.png" alt="钱端车道路">
+        <div class="decs"><i class="dec-adBoard"></i><i class="dec-dbFrame"></i><i class="dec-steelFrame"></i></div>
+        <div class="qdCar" id="qdCar"><i class="carLight-front"></i><i class="carLight-back"></i><i class="car-exhaust"></i><i class="car-body"></i></div>
+        <div class="mark-points">
+          <div class="stage-points">
+            <div class="point" id="stagePoint1"></div>
+            <div class="point" id="stagePoint2"></div>
+            <div class="point" id="stagePoint3"></div>
+            <div class="point" id="stagePoint4"></div>
+            <div class="point" id="stagePoint5"></div>
+          </div>
+          <div class="road-marks">
+            <div class="point" id="roadMark1"></div>
+            <div class="point" id="roadMark2"></div>
+            <div class="point" id="roadMark3"></div>
+            <div class="point" id="roadMark48"></div>
+            <div class="point" id="roadMark4"></div>
+            <div class="point" id="roadMark5"></div>
+            <div class="point" id="roadMark6"></div>
+            <div class="point" id="roadMark7"></div>
+            <div class="point" id="roadMark8"></div>
+            <div class="point" id="roadMark9"></div>
+            <div class="point" id="roadMark10"></div>
+            <div class="point" id="roadMark11"></div>
+            <div class="point" id="roadMark47"></div>
+            <div class="point" id="roadMark12"></div>
+            <div class="point" id="roadMark13"></div>
+            <div class="point" id="roadMark14"></div>
+            <div class="point" id="roadMark15"></div>
+            <div class="point" id="roadMark16"></div>
+            <div class="point" id="roadMark17"></div>
+            <div class="point" id="roadMark18"></div>
+            <div class="point" id="roadMark19"></div>
+            <div class="point" id="roadMark20"></div>
+            <div class="point" id="roadMark21"></div>
+            <div class="point" id="roadMark45"></div>
+            <div class="point" id="roadMark46"></div>
+            <div class="point" id="roadMark22"></div>
+            <div class="point" id="roadMark23"></div>
+            <div class="point" id="roadMark24"></div>
+            <div class="point" id="roadMark25"></div>
+            <div class="point" id="roadMark26"></div>
+            <div class="point" id="roadMark27"></div>
+            <div class="point" id="roadMark28"></div>
+            <div class="point" id="roadMark29"></div>
+            <div class="point" id="roadMark30"></div>
+            <div class="point" id="roadMark31"></div>
+            <div class="point" id="roadMark32"></div>
+            <div class="point" id="roadMark33"></div>
+            <div class="point" id="roadMark34"></div>
+            <div class="point" id="roadMark35"></div>
+            <div class="point" id="roadMark36"></div>
+            <div class="point" id="roadMark37"></div>
+            <div class="point" id="roadMark38"></div>
+            <div class="point" id="roadMark39"></div>
+            <div class="point" id="roadMark49"></div>
+            <div class="point" id="roadMark50"></div>
+            <div class="point" id="roadMark40"></div>
+            <div class="point" id="roadMark41"></div>
+            <div class="point" id="roadMark42"></div>
+            <div class="point" id="roadMark43"></div>
+            <div class="point" id="roadMark44"></div>
+          </div>
+        </div>
+        <div class="stages">
+          <!--状态class名说明: active-当前关卡; done-玩过的关卡添加.; ready-准备就绪;-->
+          <!--data-index表示赛道上对应点的序号; data-stage表示关卡序号--><a class="stage stage-1 active" href="javascript:;" data-index="0" data-stage="1">
+            <div class="bd"><img src="images/stage_1.png" alt="启动钱端车"><span class="gift"></span></div></a><a class="stage stage-2 ready" href="javascript:;" data-index="14" data-stage="2">
+            <div class="bd"><img src="images/stage_2.png" alt="投你所好"></div></a><a class="stage stage-3 ready" href="javascript:;" data-index="27" data-stage="3">
+            <div class="bd"><img src="images/stage_3.png" alt="萌宠伴架"></div></a><a class="stage stage-4 ready" href="javascript:;" data-index="39" data-stage="4">
+            <div class="bd"><img src="images/stage_4.png" alt="老司机夺宝"></div></a><a class="stage stage-5 ready" href="javascript:;" data-index="54" data-stage="5">
+            <div class="bd"><img src="images/stage_5.png" alt="兜风心得"></div></a>
+        </div>
+      </div>
+    </main>
+    <!--规则说明-->
+    <div class="ch-modal ch-modal-rule">
+      <div class="ch-overly"></div>
+      <div class="ch-modal-cont">
+        <div class="ch-rule-title">活动说明<a class="ch-modal-close" href="javascript:;">关闭</a></div>
+        <div class="ch-rule-cont always-visible">
+          <ul>
+            <li>活动对象限钱端(定制版)APP用户;</li>
+            <li>用户只要完成实名认证、定期投资、摇钱宝（活期）、闪惠购、意见反馈等指定任务，可获得一次抽奖机会，每人每环节有且只有一次机会;</li>
+            <li>实物奖品自获奖之日起15个工作日内邮寄至用户本人，届时将有客服人员电话核实邮寄地址，请保持手机畅通;</li>
+            <li>非实物奖品（含5%、3%、0.5%、0.3%的加息券、现金券、话费等）自获奖之日即刻生效，如果超出时间未兑换或者使用均视为作废;</li>
+            <li>严禁任何形式的作弊刷单行为，一经核实将取消奖励资格，并保留追究法律责任的权利;</li>
+            <li>活动最终解释权归广东钱端商务服务有限公司所有。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script>
+      //触发a:active
+      document.body.addEventListener('touchstart', function () { });
+    </script>
+    <script src="js/lib/zepto.min.js"></script>
+    <script src="js/main.js"></script>
+    <div style="display: none">
+      <script></script>
+    </div>
+    <script src="js/carMove.js"></script>
+    <script src="js/perfect-scrollbar.min.js"></script>
+    <script>
+      //alert(navigator.userAgent)
+      //alert(getIphoneDeviceInfo().osVersion)
+      $(function () {
+          $(".share-appdown-close").click(function () {
+              $("#shareAppDown").hide();
+          });
+          $(document).on("click",".ch-rule-btn",function(){
+              showModal(".ch-modal-rule");
+              //弹框div模拟滚动条
+              [].forEach.call(document.querySelectorAll('.ch-rule-cont'), function (el) {
+                Ps.initialize(el);
+              });
+              $(".ch-modal-close, .modal-close").on("click",function(){
+                  $(".ps-scrollbar-x-rail,.ps-scrollbar-y-rail").remove();
+              });
+          });
+      });
+    </script>
+  </body>
+</html>

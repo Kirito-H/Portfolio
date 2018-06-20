@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="robots" content="index,follow">
+    <meta name="flexible" content="initial-dpr=1">
+    <script type="text/javascript" src="js/flexible.js"></script>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="format-detection" content="telephone=no">
+    <meta content="email=no" name="format-detection">
+    <title>钱端小助手</title>
+    <link rel="stylesheet" href="css/style.css?v=1.0">
+  </head>
+  <body>
+    <div id="wxContainer">
+      <section class="page page1">
+        <div class="contain">
+          <div class="p01-left"><img src="images/p01_left.png"></div>
+          <div class="p01-right"><img src="images/p01_right.png"></div><img class="p01-title" src="images/p01_title.png">
+          <div class="logo"><img src="images/logo.png">
+            <p>钱端V3.2.0</p>
+          </div>
+          <div class="nextIcon"></div>
+        </div>
+      </section>
+      <section class="page page2">
+        <div class="contain">
+          <div class="p01-left"><img src="images/p01_left.png"></div>
+          <div class="p01-right"><img src="images/p01_right.png"></div>
+          <div class="p2-cont"><img class="p02-img trs-01" src="images/p02_img.png"><img class="p02-title trs-02" src="images/p02_title.png"><img class="p02-title2 trs-03" src="images/p02_title2.png"><img class="p02-little trs-04" src="images/p02_little.png"><img class="p02-quick trs-05" src="images/p02_quick.png"></div>
+          <div class="nextIcon"></div>
+        </div>
+      </section>
+      <section class="page page3">
+        <div class="contain">
+          <div class="p01-left"><img src="images/p01_left.png"></div>
+          <div class="p01-right"><img src="images/p01_right.png"></div>
+          <div class="p3-cont"><img class="p03-img trs-01" src="images/p03_img.png"><img class="p03-title trs-02" src="images/p03_title.png"><img class="p03-title2 trs-03" src="images/p03_title2.png"><img class="p03-share trs-04" src="images/p03_share.png"><img class="p03-news trs-05" src="images/p03_news.png"></div>
+          <div class="nextIcon"></div>
+        </div>
+      </section>
+      <section class="page page4">
+        <div class="contain">
+          <div class="p01-left"><img src="images/p01_left.png"></div>
+          <div class="p01-right"><img src="images/p01_right.png"></div>
+          <div class="p4-cont"><img class="p04-img trs-01" src="images/p04_img.png"><img class="p04-title trs-02" src="images/p04_title.png"><img class="p04-title2 trs-03" src="images/p04_title2.png"><img class="p04-more trs-04" src="images/p04_more.png"><img class="p04-sever trs-05" src="images/p04_sever.png"></div>
+        </div>
+      </section>
+    </div>
+    <div id="navBar">
+      <li>0</li>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+    </div>
+    <script src="js/fullPage.min.js"></script>
+    <script>
+      var runSection = new FullPage({
+            id : 'wxContainer',
+            slideTime : 800,
+            continuous : false,
+            effect : {
+              transform : {
+                translate : 'Y',
+                scale : [1, 1],
+                rotate : [0, 0]
+              },
+              opacity : [0, 1]
+            },
+            mode : 'wheel,touch,nav:navBar',
+            easing : 'ease',
+          });
+    </script>
+  </body>
+</html>

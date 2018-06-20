@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="robots" content="index,follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!--meta(name='full-screen' content='yes')-->
+    <!--meta(name='x5-fullscreen' content='true')-->
+    <meta content="telephone=no, email=no" name="format-detection">
+    <link rel="stylesheet" href="style/sm.min.css">
+    <link rel="stylesheet" href="style/style.css">
+    <script src="js/lib/zepto.min.js"></script>
+    <script>$.config = {router: false}</script>
+    <title>安享活期记录</title>
+  </head>
+  <body>
+    <aside class="sideMenu">
+      <div class="container"><a class="personalCenter-trig" href="账户安全.html">
+          <div class="avatar">
+            <div class="ribbon">
+              <div class="ribbon-cont">机构会员</div>
+            </div>
+          </div>
+          <p class="user-name">FT_123456_0223</p></a>
+        <nav class="nav"><a class="nav-item" href="index.html"><i class="iconfont icon-histogram-1"></i>
+            <p>稳健理财</p></a><a class="nav-item" href="安享活期.html"><i class="iconfont icon-update"></i>
+            <p>安享活期</p></a><a class="nav-item active" href="我的资产.html"><i class="iconfont icon-rmb-big"></i>
+            <p>我的资产</p></a>
+        </nav><a class="setting-trig" href="关于CBS.html"><i class="iconfont icon-setting"></i></a>
+      </div>
+    </aside>
+    <aside class="floatBar">
+      <div class="container">
+        <div class="default-cont">
+          <div class="current-time"></div>
+          <div class="current-date"></div>
+        </div>
+        <div class="expanded-cont">
+          <div class="float-menu"><a class="menu-item" href="index.html"><i class="iconfont icon-index"></i>
+              <p>首页</p></a></div>
+        </div>
+      </div>
+    </aside>
+    <div class="page-group">
+      <div class="page page-current">
+        <header class="bar bar-nav title-bar has-sider">
+          <h2 class="title">安享活期记录</h2>
+        </header>
+        <div class="bar bar-header-secondary has-sider">
+          <div class="buttons-tab ch-tab"><a class="tab-link button active" href="#tab01">全部记录</a><a class="tab-link button" href="#tab02">转入记录</a><a class="tab-link button" href="#tab03">转出记录</a><a class="tab-link button" href="#tab04">收益记录</a></div>
+        </div>
+        <div class="sider-menu">
+          <div class="title">账户总览</div>
+          <div class="container">
+            <div class="y-sec03">
+              <dl>
+                <dt>总资产</dt>
+                <dd class="text-1">12.23万元</dd>
+                <dt>预期累计净收益</dt>
+                <dd><em class="num-1">2,234.00</em>元</dd>
+              </dl>
+            </div>
+            <div class="list-block">
+              <ul>
+                <li class="item-content sider-item-title">
+                  <div class="item-inner">
+                    <div class="item-title">资产明细</div>
+                  </div>
+                </li>
+                <li class="item-content item-link"><a class="item-inner" href="我的资产.html">
+                    <div class="item-title">
+                      <p>投资理财</p>
+                      <p class="amount">12.00万元</p>
+                    </div></a></li>
+                <li class="item-content item-link"><a class="item-inner active" href="安享活期记录.html">
+                    <div class="item-title">
+                      <p>安享活期</p>
+                      <p class="amount">12.00万元</p>
+                    </div></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="content">
+          <div class="tabs">
+            <!--全部记录-->
+            <div class="tab active" id="tab01">
+              <div class="y-table tradeRecord-list y-tb-list01">
+                <div class="y-thead">
+                  <div class="y-tr">
+                    <div class="y-th">时间</div>
+                    <div class="y-th">银行账户</div>
+                    <div class="y-th">金额(元)</div>
+                    <div class="y-th">类型</div>
+                    <div class="y-th">状态</div>
+                    <div class="y-th">详情</div>
+                  </div>
+                </div>
+                <div class="y-tbody">
+                  <div class="y-tr">
+                    <div class="y-td">2017-02-23 12:00</div>
+                    <div class="y-td">**** **** **** 5555</div>
+                    <div class="y-td">+5,000.00</div>
+                    <div class="y-td">转入</div>
+                    <div class="y-td"><em class="tradeState failed">失败</em></div>
+                    <div class="y-td"><a class="y-link01" href="定期投资详情.html">查看</a></div>
+                  </div>
+                  <div class="y-tr">
+                    <div class="y-td">2017-02-23 12:00</div>
+                    <div class="y-td">**** **** **** 5555</div>
+                    <div class="y-td">-5,000.00</div>
+                    <div class="y-td">转出</div>
+                    <div class="y-td"><em class="tradeState">成功</em></div>
+                    <div class="y-td"><a class="y-link01" href="定期投资详情.html">查看</a></div>
+                  </div>
+                  <div class="y-tr">
+                    <div class="y-td">2017-02-23 12:00</div>
+                    <div class="y-td">**** **** **** 5555</div>
+                    <div class="y-td">+5,000.00</div>
+                    <div class="y-td">转入</div>
+                    <div class="y-td"><em class="tradeState failed">失败</em></div>
+                    <div class="y-td"><a class="y-link01" href="定期投资详情.html">查看</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--转入记录-->
+            <div class="tab" id="tab02">
+              <div class="y-table tradeRecord-list y-tb-list01">
+                <div class="y-thead">
+                  <div class="y-tr">
+                    <div class="y-th">时间</div>
+                    <div class="y-th">银行账户</div>
+                    <div class="y-th">金额(元)</div>
+                    <div class="y-th">类型</div>
+                    <div class="y-th">状态</div>
+                    <div class="y-th">详情</div>
+                  </div>
+                </div>
+                <div class="y-tbody">
+                  <div class="y-tr">
+                    <div class="y-td">2017-02-23 12:00</div>
+                    <div class="y-td">**** **** **** 5555</div>
+                    <div class="y-td">+5,000.00</div>
+                    <div class="y-td">转入</div>
+                    <div class="y-td"><em class="tradeState failed">失败</em></div>
+                    <div class="y-td"><a class="y-link01" href="定期投资详情.html">查看</a></div>
+                  </div>
+                  <div class="y-tr">
+                    <div class="y-td">2017-02-23 12:00</div>
+                    <div class="y-td">**** **** **** 5555</div>
+                    <div class="y-td">+5,000.00</div>
+                    <div class="y-td">转入</div>
+                    <div class="y-td"><em class="tradeState">成功</em></div>
+                    <div class="y-td"><a class="y-link01" href="定期投资详情.html">查看</a></div>
+                  </div>
+                  <div class="y-tr">
+                    <div class="y-td">2017-02-23 12:00</div>
+                    <div class="y-td">**** **** **** 5555</div>
+                    <div class="y-td">+5,000.00</div>
+                    <div class="y-td">转入</div>
+                    <div class="y-td"><em class="tradeState failed">失败</em></div>
+                    <div class="y-td"><a class="y-link01" href="定期投资详情.html">查看</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--转出记录-->
+            <div class="tab" id="tab03">
+              <div class="y-table tradeRecord-list y-tb-list01">
+                <div class="y-thead">
+                  <div class="y-tr">
+                    <div class="y-th">时间</div>
+                    <div class="y-th">银行账户</div>
+                    <div class="y-th">金额(元)</div>
+                    <div class="y-th">类型</div>
+                    <div class="y-th">状态</div>
+                    <div class="y-th">详情</div>
+                  </div>
+                </div>
+                <div class="y-tbody">
+                  <div class="y-tr">
+                    <div class="y-td">2017-02-23 12:00</div>
+                    <div class="y-td">**** **** **** 5555</div>
+                    <div class="y-td">-5,000.00</div>
+                    <div class="y-td">转出</div>
+                    <div class="y-td"><em class="tradeState failed">失败</em></div>
+                    <div class="y-td"><a class="y-link01" href="定期投资详情.html">查看</a></div>
+                  </div>
+                  <div class="y-tr">
+                    <div class="y-td">2017-02-23 12:00</div>
+                    <div class="y-td">**** **** **** 5555</div>
+                    <div class="y-td">-5,000.00</div>
+                    <div class="y-td">转出</div>
+                    <div class="y-td"><em class="tradeState">成功</em></div>
+                    <div class="y-td"><a class="y-link01" href="定期投资详情.html">查看</a></div>
+                  </div>
+                  <div class="y-tr">
+                    <div class="y-td">2017-02-23 12:00</div>
+                    <div class="y-td">**** **** **** 5555</div>
+                    <div class="y-td">-5,000.00</div>
+                    <div class="y-td">转出</div>
+                    <div class="y-td"><em class="tradeState failed">失败</em></div>
+                    <div class="y-td"><a class="y-link01" href="定期投资详情.html">查看</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--收益记录-->
+            <div class="tab" id="tab04">
+              <div class="y-table tradeRecord-list y-tb-list01">
+                <div class="y-thead">
+                  <div class="y-tr">
+                    <div class="y-th">时间</div>
+                    <div class="y-th">银行账户</div>
+                    <div class="y-th">金额(元)</div>
+                    <div class="y-th">类型</div>
+                    <div class="y-th">状态</div>
+                    <div class="y-th">详情</div>
+                  </div>
+                </div>
+                <div class="y-tbody">
+                  <div class="y-tr">
+                    <div class="y-td">2017-02-23 12:00</div>
+                    <div class="y-td">**** **** **** 5555</div>
+                    <div class="y-td">+500.00</div>
+                    <div class="y-td">收益</div>
+                    <div class="y-td"><em class="tradeState failed">失败</em></div>
+                    <div class="y-td"><a class="y-link01" href="定期投资详情.html">查看</a></div>
+                  </div>
+                  <div class="y-tr">
+                    <div class="y-td">2017-02-23 12:00</div>
+                    <div class="y-td">**** **** **** 5555</div>
+                    <div class="y-td">+500.00</div>
+                    <div class="y-td">收益</div>
+                    <div class="y-td"><em class="tradeState">成功</em></div>
+                    <div class="y-td"><a class="y-link01" href="定期投资详情.html">查看</a></div>
+                  </div>
+                  <div class="y-tr">
+                    <div class="y-td">2017-02-23 12:00</div>
+                    <div class="y-td">**** **** **** 5555</div>
+                    <div class="y-td">+500.00</div>
+                    <div class="y-td">收益</div>
+                    <div class="y-td"><em class="tradeState failed">失败</em></div>
+                    <div class="y-td"><a class="y-link01" href="定期投资详情.html">查看</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/lib/sm.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/components/dropload.min.js"></script>
+    <script>
+      $(function(){
+        //加载更多投资记录
+        (function () {
+          var itemIndex = 0,
+              tab1LoadEnd = false,
+              tab2LoadEnd = false,
+              tab3LoadEnd = false,
+              tab4LoadEnd = false;
+          // tab
+          $('.buttons-tab .tab-link').on('click', function () {
+            var $this = $(this);
+            itemIndex = $this.index();
+      
+            setTimeout(function () {
+              // 如果选中菜单一
+              if (itemIndex == '0') {
+                // 如果数据没有加载完
+                if (!tab1LoadEnd) {
+                  // 解锁
+                  dropload.unlock();
+                  dropload.noData(false);
+                } else {
+                  // 锁定
+                  dropload.lock('down');
+                  dropload.noData();
+                }
+                // 如果选中菜单二
+              } else if (itemIndex == '1') {
+                if (!tab2LoadEnd) {
+                  // 解锁
+                  dropload.unlock();
+                  dropload.noData(false);
+                } else {
+                  // 锁定
+                  dropload.lock('down');
+                  dropload.noData();
+                }
+              } else if (itemIndex == '2') {
+                if (!tab3LoadEnd) {
+                  // 解锁
+                  dropload.unlock();
+                  dropload.noData(false);
+                } else {
+                  // 锁定
+                  dropload.lock('down');
+                  dropload.noData();
+                }
+              } else if (itemIndex == '3') {
+                if (!tab4LoadEnd) {
+                  // 解锁
+                  dropload.unlock();
+                  dropload.noData(false);
+                } else {
+                  // 锁定
+                  dropload.lock('down');
+                  dropload.noData();
+                }
+              }
+              // 重置
+              dropload.resetload();
+            }, 10);
+          });
+      
+          var counter = 0;
+          //每次加载的数据条数
+          var num = 4;
+          var pageStart = 0, pageEnd = 0;
+          var dropload = $('.content').dropload({
+            threshold: 300,
+            loadDownFn: function (me) {
+              // 加载菜单一的数据
+              if (itemIndex == '0') {
+                $.ajax({
+                  type: 'GET',
+                  url: 'js/json/records_data.json',
+                  dataType: 'json',
+                  success: function (data) {
+                    var result = '';
+                    counter++;
+                    pageEnd = num * counter;
+                    pageStart = pageEnd - num;
+      
+                    if(pageStart <= data.anxRecordsAll.length) {
+                      for (var i = 0; i < data.anxRecordsAll.length; i++) {
+                        result += '<div class="y-tr">' +
+                            //时间
+                            '<div class="y-td">' + data.anxRecordsAll[i].tradeTime + '</div>' +
+                            //银行账户
+                            '<div class="y-td">' + data.anxRecordsAll[i].bankAccount + '</div>' +
+                            //金额(元)
+                            '<div class="y-td">' + data.anxRecordsAll[i].amount + '</div>' +
+                            //类型
+                            '<div class="y-td">' + data.anxRecordsAll[i].tradeType + '</div>' +
+                            //状态
+                            '<div class="y-td"><em class="tradeState' + (data.anxRecordsAll[i].failed == 'true' ? ' failed' : '') + '">' + data.anxRecordsAll[i].tradeStade + '</em></div>' +
+                            //详情链接
+                            '<div class="y-td"><a class="y-link01" href="' + data.anxRecordsAll[i].detailLink + '">详情</a></div>' +
+                            '</div>';
+                        if ((i + 1) >= data.anxRecordsAll.length) {
+                          // 数据加载完
+                          tab1LoadEnd = true;
+                          // 锁定
+                          me.lock();
+                          // 无数据
+                          me.noData();
+                          break;
+                        }
+                      }
+                      // 为了测试，延迟1秒加载
+                      setTimeout(function () {
+                        $('.tradeRecord-list').eq(0).find('.y-tbody').append(result);
+                        // 每次数据加载完，必须重置
+                        me.resetload();
+                      }, 1000);
+                    }
+                  },
+                  error: function (xhr, type) {
+                    alert('Ajax error!');
+                    // 即使加载出错，也得重置
+                    me.resetload();
+                  }
+                });
+              } else if(itemIndex == '1') {
+                $.ajax({
+                  type: 'GET',
+                  url: 'js/json/records_data.json',
+                  dataType: 'json',
+                  success: function (data) {
+                    var result = '';
+                    for (var i = 0; i < data.rollInRecords.length; i++) {
+                      result += '<div class="y-tr">' +
+                          //时间
+                          '<div class="y-td">' + data.rollInRecords[i].tradeTime + '</div>' +
+                          //银行账户
+                          '<div class="y-td">' + data.rollInRecords[i].bankAccount + '</div>' +
+                          //金额(元)
+                          '<div class="y-td">' + data.rollInRecords[i].amount + '</div>' +
+                          //类型
+                          '<div class="y-td">转入</div>' +
+                          //状态
+                          '<div class="y-td"><em class="tradeState' + (data.rollInRecords[i].failed == 'true' ? ' failed' : '') + '">' + data.rollInRecords[i].tradeStade + '</em></div>' +
+                          //详情链接
+                          '<div class="y-td"><a class="y-link01" href="' + data.rollInRecords[i].detailLink + '">详情</a></div>' +
+                          '</div>';
+                    }
+                    setTimeout(function () {
+                      $('.tradeRecord-list').eq(1).find('.y-tbody').append(result);
+                      me.resetload();
+                    }, 1000);
+                  },
+                  error: function (xhr, type) {
+                    alert('Ajax error!');
+                    me.resetload();
+                  }
+                });
+              } else if(itemIndex == '2') {
+                $.ajax({
+                  type: 'GET',
+                  url: 'js/json/records_data.json',
+                  dataType: 'json',
+                  success: function (data) {
+                    var result = '';
+                    for (var i = 0; i < data.rollOutRecords.length; i++) {
+                      result += '<div class="y-tr">' +
+                          //时间
+                          '<div class="y-td">' + data.rollOutRecords[i].tradeTime + '</div>' +
+                          //银行账户
+                          '<div class="y-td">' + data.rollOutRecords[i].bankAccount + '</div>' +
+                          //金额(元)
+                          '<div class="y-td">' + data.rollOutRecords[i].amount + '</div>' +
+                          //类型
+                          '<div class="y-td">转出</div>' +
+                          //状态
+                          '<div class="y-td"><em class="tradeState' + (data.rollOutRecords[i].failed == 'true' ? ' failed' : '') + '">' + data.rollOutRecords[i].tradeStade + '</em></div>' +
+                          //详情链接
+                          '<div class="y-td"><a class="y-link01" href="' + data.rollOutRecords[i].detailLink + '">详情</a></div>' +
+                          '</div>';
+                    }
+                    setTimeout(function () {
+                      $('.tradeRecord-list').eq(2).find('.y-tbody').append(result);
+                      me.resetload();
+                    }, 1000);
+                  },
+                  error: function (xhr, type) {
+                    alert('Ajax error!');
+                    me.resetload();
+                  }
+                });
+              } else if(itemIndex == '3') {
+                $.ajax({
+                  type: 'GET',
+                  url: 'js/json/records_data.json',
+                  dataType: 'json',
+                  success: function (data) {
+                    var result = '';
+                    for (var i = 0; i < data.yieldRecords.length; i++) {
+                      result += '<div class="y-tr">' +
+                          //时间
+                          '<div class="y-td">' + data.yieldRecords[i].tradeTime + '</div>' +
+                          //银行账户
+                          '<div class="y-td">' + data.yieldRecords[i].bankAccount + '</div>' +
+                          //金额(元)
+                          '<div class="y-td">' + data.yieldRecords[i].amount + '</div>' +
+                          //类型
+                          '<div class="y-td">收益</div>' +
+                          //状态
+                          '<div class="y-td"><em class="tradeState' + (data.yieldRecords[i].failed == 'true' ? ' failed' : '') + '">' + data.yieldRecords[i].tradeStade + '</em></div>' +
+                          //详情链接
+                          '<div class="y-td"><a class="y-link01" href="' + data.yieldRecords[i].detailLink + '">详情</a></div>' +
+                          '</div>';
+                    }
+                    setTimeout(function () {
+                      $('.tradeRecord-list').eq(3).find('.y-tbody').append(result);
+                      me.resetload();
+                    }, 1000);
+                  },
+                  error: function (xhr, type) {
+                    alert('Ajax error!');
+                    me.resetload();
+                  }
+                });
+              }
+            }
+          });
+        })();
+      
+      });
+    </script>
+  </body>
+</html>

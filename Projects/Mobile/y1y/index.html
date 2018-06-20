@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="robots" content="index,follow" />
+  <script src="js/hotcss.js"></script>
+  <meta name="apple-mobile-web-app-capable" content="yes" /> <!-- 启用 WebApp 全屏模式 -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta content="telephone=no" name="format-detection" />
+  <meta content="email=no" name="format-detection" />
+  <meta name="HandheldFriendly" content="true"> <!-- 针对一些老的不识别viewport的浏览器，比如黑莓 -->
+  <meta name="screen-orientation" content="portrait"> <!-- uc强制竖屏 -->
+  <meta name="x5-orientation" content="portrait"> <!-- QQ强制竖屏 -->
+  <meta name="full-screen" content="yes"> <!-- UC强制全屏 -->
+  <meta name="x5-fullscreen" content="true"> <!-- QQ强制全屏 -->
+  <title>姨吗金摇一摇活动</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<div class="sec-decs">
+  <img src="images/dec_img.png" alt="" class="dec-img"/>
+  <img src="images/dec_balloon01.png" alt="" class="dec-balloon01"/>
+  <img src="images/dec_balloon02.png" alt="" class="dec-balloon02"/>
+  <img src="images/hot_balloon.png" alt="" class="dec-hotBalloon"/>
+</div><!--/sec-decs-->
+<a href="javascript:;" class="link-back" onclick="window.history.go(-1);">
+  <img src="images/arrow_l.png" alt=""/>
+</a>
+<main class="main-cont">
+  <div class="tAc">
+    <img src="images/theme.png" alt="" class="theme"/>
+  </div>
+  <div class="shake">
+    <img src="images/shake_body.png" alt="" class="shake-body"/>
+    <img src="images/shake_shadow.png" alt="" class="shake-shadow"/>
+    <div class="tip01">今日还可摇 <strong>3</strong> 次</div>
+    <a href="guide.html" class="link-actiRule"></a>
+  </div><!--/shake-->
+  <div class="sec-info clearfix">
+    <div class="part-l">
+      <p class="para01">摇一摇已为你多赚利息（元）</p>
+      <p><strong class="font01">0.12</strong></p>
+      <p>当前排名第8888名<br>再接再厉哦</p>
+      <a href="ranking.html" class="btn-ranking"></a>
+    </div><!--/part-l-->
+    <div class="part-r">
+      <p class="para01">你当前账户的余额（元）</p>
+      <p><strong class="font01">100.15</strong></p>
+      <p>余额越多<br>加息收益更多哦</p>
+      <a href="#!" class="btn-saveUp"></a>
+    </div><!--/part-r-->
+  </div><!--/sec-info-->
+</main>
+
+<!-- 弹框 -->
+<div class="mask tapToHide"></div>
+<!--过度摇摆-->
+<div class="thickbox sp">
+  <img src="images/sp1.png" class="sp1">
+  <p>
+    <a href="#!"><img src="images/bt1.png" class="btn b2" alt="立即存入"></a>
+  </p>
+</div>
+<!--没有摇中-->
+<div class="thickbox no">
+  <img src="images/no1.png" class="no1 hide">
+  <img src="images/no2.png" class="no2 hide" >
+  <img src="images/no3.png" class="no3 hide" >
+  <a href="javascript:;"><img src="images/bt3.png" class="btn btnClose" alt="再试一次"></a>
+</div>
+<!--摇中，余额不为0-->
+<div class="thickbox yes">
+  <div class="pos">
+    <img src="images/yes1.png" class="yes1">
+    <p class="padd">+ <strong>2.1%</strong></p>
+    <p class="pment">手气不错哦，摇到 <em>0.24</em>元加息额</p>
+  </div>
+  <a href="javascript:;"><img src="images/bt2.png" class="btn b1 btnClose" alt="立即收入囊中"></a>
+</div>
+<!--摇中，余额为0-->
+<div class="thickbox yu_e_0">
+  <div class="pos">
+    <img src="images/yes2.png" class="yes2">
+    <p class="padd">+ <strong>3%</strong></p>
+  </div>
+  <a href="#!"><img src="images/bt1.png" class="btn b2" alt="立即存入"></a>
+</div>
+
+<script src="js/zepto.min.js"></script>
+<script src="js/touch.min.js"></script>
+<script src="js/shake.js"></script>
+<script>
+  window.onload = function () {
+    document.body.className += 'loaded';
+    setTimeout(function () {
+      document.querySelector('.theme').className += ' show';
+    }, 1800);
+
+    if (window.DeviceMotionEvent) {
+      var myShakeEvent = new Shake({
+        threshold: 15,
+        timeout: 1000
+      });
+      myShakeEvent.start();
+      window.addEventListener('shake', shakeEventDidOccur, false);
+    } else {
+      alert('抱歉，您的设备不支持"摇一摇"！');
+    }
+
+    var tap = $.tap ? 'tap' : 'click';
+    var prevDefault = function (event) {
+      event.preventDefault();
+    };
+    var closeThiBox = function (elem) {
+      $('.mask').hide(0);
+      $(elem).hide(0);
+      $('body').removeClass('canNotShake shaked').addClass('loaded');
+      document.body.removeEventListener('touchmove', prevDefault, false);
+    };
+    function showThiBox(elem) {
+      $('.mask').show(0);
+      $(elem).show(0);
+      $('body').addClass('canNotShake');
+    }
+    $('.mask.tapToHide, .btnClose').on(tap, function () {
+      closeThiBox('.thickbox');
+    });
+
+    function shakeEventDidOccur () {
+      var $body = $('body');
+      if($body.hasClass('canNotShake')) { return false }
+      var num = Math.floor(Math.random() * 6);
+      $body.addClass('shaking');
+      setTimeout(function(){
+        $(".sp,.no,.yes").hide();
+        switch(num)
+        {
+          case 0:
+            showThiBox(".sp");
+            break;
+          case 1:
+            showThiBox(".no,.no1");
+            $(".no2,.no3").hide();
+            break;
+          case 2:
+            showThiBox(".no,.no2");
+            $(".no1,.no3").hide();
+            break;
+          case 3:
+            showThiBox(".no,.no3");
+            $(".no1,.no2").hide();
+            break;
+          case 4:
+            showThiBox(".yes");
+            break;
+          case 5:
+            showThiBox(".yu_e_0");
+            break;
+          default :
+            return false;
+        }
+        $body.addClass('shaked').removeClass('loaded shaking');
+      }, 800);
+      document.body.addEventListener('touchmove', prevDefault, false);
+    }
+  }
+</script>
+</body>
+</html>

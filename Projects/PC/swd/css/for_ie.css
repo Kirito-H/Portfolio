@@ -1,0 +1,95 @@
+﻿@charset "utf-8";
+
+/*========== page public styles start ==========*/
+* html {
+  /* 修正IE6振动bug */
+  /*background-image: url(about:blank);*/
+  /*background-attachment: fixed;*/
+}
+body, label, button, input, select, option, textarea, fieldset, legend {
+  font-family: \5FAE\8F6F\96C5\9ED1, Arial, \5b8b\4f53, sans-self;
+}
+
+.i-search, .i-plus, .i-date, .i-export, .i-del {
+  _margin-top: 8px;
+}
+.i-quit, .i-fav {
+  _position: relative;
+  _top: 5px;
+}
+.i-fav {
+  _top: 6px;
+}
+.txt1 {
+  _position: relative;
+  _top: 3px;
+}
+.i-sort {
+  _height: 12px;
+  _overflow: hidden;
+}
+.i-triD01 {
+  _border-left: 4px solid #00b7ee;
+  _border-right: 4px solid #00b7ee;
+}
+.i-triUp01 {
+  _border-left: 14px solid #ff4e50;
+  _border-right: 14px solid #ff4e50;
+}
+.btn01-6:hover .i-triUp01 {
+  _border-left: 14px solid #ff383a;
+  _border-right: 14px solid #ff383a;
+}
+.gap-line01 {
+  _height: 10px;
+}
+body .font02 {
+  position: relative;
+  top: -2px;
+  font-size: 1em;
+}
+
+/*headers & titles*/
+
+
+/*buttons & links*/
+.btn01-2, .btn01-7 {
+  *font-size: 14px;
+}
+.opt01:hover, .opt01.selected {
+  _background: url(../images/i_selected.gif) right bottom no-repeat;
+}
+
+/*form elements*/
+.form-item01 label, .form-item01 select, .form-item01 input {
+  font-size: 14px;
+}
+.form-item02 .label01, .form-item02 .select01, .form-item02 .textarea01 {
+  font-size: 16px;
+}
+.select01 {
+  *height: auto;
+}
+.inp-file01 {
+  *width: 87px;
+  *height: 32px;
+}
+.form-item02 .textarea01 {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.mask {
+  _height: 1000px;
+}
+/*========== page public styles end ==========*/
+
+
+/*========== specific pages' styles start ==========*/
+/*slide*/
+.slide img {
+  _position: relative;
+  _top: -1px;
+}
+/*========== specific pages' styles end ==========*/
